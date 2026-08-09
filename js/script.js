@@ -9,10 +9,16 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Hero background video: pause (but keep visible) for users who prefer
-  // reduced motion, so it shows as a static frame instead of animating.
+  // reduced motion, so it shows a static frame instead of animating.
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.querySelectorAll('.hero-video').forEach(function (v) {
       v.pause();
+      // Once the first frame is available, show a real video frame rather
+      // than the poster image.
+      v.addEventListener('loadedmetadata', function () {
+        v.pause();
+        try { v.currentTime = 0.01; } catch (e) { /* ignore */ }
+      });
     });
   }
 
