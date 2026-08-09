@@ -1,0 +1,28 @@
+# ----------------------------------------------------------
+# Home Hospital - root web-server protection (Apache)
+# ----------------------------------------------------------
+
+# Never show directory listings
+Options -Indexes
+
+# Block direct access to database and log files anywhere in the site
+<FilesMatch "\.(sqlite|sqlite3|db|db3|log|bak|ini)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# Block access to dotfiles (.htaccess, .htpasswd, .env, ...)
+<FilesMatch "^\.">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>

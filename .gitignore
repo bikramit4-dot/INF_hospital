@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Sensitive files - never commit these (public repo!)
+storage/admin-password.txt
+storage/hospital.sqlite
+storage/php-errors.log
+storage/git-auto-sync.log
+storage/git-auto-sync.out.log
+storage/git-auto-sync.err.log
+storage/*.log
+
+# User-uploaded files (keep folder structure only)
+uploads/*
+!uploads/.htaccess
+!uploads/index.html
+
+# Editors / IDE
+.vscode/
+.idea/
+*.swp
