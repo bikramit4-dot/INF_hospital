@@ -1,7 +1,7 @@
 <section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+  <video class="hero-video" autoplay muted loop playsinline preload="auto"
     poster="<?php echo e(site_url('images/gettyimages-1390026192.jpg')); ?>" aria-hidden="true">
-    <source src="<?php echo e(site_url('images/Olive%20and%20White%20Modern%20Spa%20and%20Wellness%20Banner%20Landscape.mp4')); ?>" type="video/mp4">
+    <source src="<?php echo e(site_url('images/hero-background.mp4')); ?>" type="video/mp4">
   </video>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="container hero-inner">

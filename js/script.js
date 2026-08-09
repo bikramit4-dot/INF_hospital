@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Hero background video: pause (but keep visible) for users who prefer
+  // reduced motion, so it shows as a static frame instead of animating.
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.hero-video').forEach(function (v) {
+      v.pause();
+    });
+  }
+
   // Mobile nav toggle
   const navToggle = document.getElementById('navToggle');
   const mainNav = document.getElementById('mainNav');
