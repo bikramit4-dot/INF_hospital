@@ -125,6 +125,7 @@ img{max-width:100%;display:block;}
 @keyframes callWiggle{0%,100%{transform:rotate(0);}25%{transform:rotate(-14deg);}75%{transform:rotate(12deg);}}
 
 @media (prefers-reduced-motion: reduce){
+  .hero-video{display:none;}
   .topbar,.logo,.header-actions,.main-nav .nav-list > li{animation:none;}
   .caret,.nav-cta,.hero-buttons .btn-outline,.hero-buttons .btn-primary,.logo{transition:none;}
   .carousel-track,.carousel-slide,.carousel-slide .service-card,
