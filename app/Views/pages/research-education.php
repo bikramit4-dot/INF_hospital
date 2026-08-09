@@ -1,7 +1,7 @@
 <section class="page-banner">
   <div class="container">
     <h1>Research & Education</h1>
-    <div class="breadcrumb"><a href="<?php echo e(site_url('pages/pages/index.php'))); ?>">Home</a> / Research & Education</div>
+    <div class="breadcrumb"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / Research & Education</div>
   </div>
 </section>
 

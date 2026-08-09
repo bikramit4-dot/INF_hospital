@@ -1,7 +1,7 @@
 <section class="page-banner">
   <div class="container">
     <h1>Patient Care & Safety</h1>
-    <div class="breadcrumb"><a href="<?php echo e(site_url('pages/pages/index.php'))); ?>">Home</a> / Patient Care & Safety</div>
+    <div class="breadcrumb"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / Patient Care & Safety</div>
   </div>
 </section>
 

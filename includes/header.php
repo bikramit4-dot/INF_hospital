@@ -37,7 +37,7 @@ function header_nav_active(string $link, string $current): string
 <!-- Main header: brand + quick actions -->
 <header class="site-header">
   <div class="container header-main">
-    <a href="<?php echo e(site_url('pages/pages/index.php'))); ?>" class="logo" aria-label="<?php echo e(SITE_NAME); ?>">
+    <a href="<?php echo e(site_url('pages/index.php')); ?>" class="logo" aria-label="<?php echo e(SITE_NAME); ?>">
       <img src="<?php echo e(site_url('images/logo.png')); ?>" alt="<?php echo e(SITE_NAME); ?>" class="logo-img">
     </a>
 
@@ -49,7 +49,7 @@ function header_nav_active(string $link, string $current): string
           <?php echo e(SITE_EMERGENCY); ?>
         </span>
       </a>
-      <a href="<?php echo e(site_url('pages/pages/book-appointment.php'))); ?>" class="btn btn-primary nav-cta">Book Appointment</a>
+      <a href="<?php echo e(site_url('pages/book-appointment.php')); ?>" class="btn btn-primary nav-cta">Book Appointment</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
     </div>
   </div>

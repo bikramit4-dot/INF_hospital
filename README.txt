@@ -45,25 +45,32 @@ Option 3 - Any shared PHP hosting:
 
 FOLDER STRUCTURE
 ----------------
-index.php                  - Homepage
-about.php                  - About Us
-mission-vision.php         - Mission & Vision
-management-team.php        - Management Team
-departments.php            - Departments
-medical-technology.php     - Medical Technology
-patient-care-safety.php    - Patient Care & Safety
-health-packages.php        - Health Packages
-research-education.php     - Research & Education
-careers.php                - Careers (with job application form)
-news-events.php            - News and Events
-contact.php                - Contact Us (with contact form)
-services.php               - Our Services (all service types, anchor sections)
-find-doctor.php            - Find a Doctor (search by name/department/specialty)
-doctor-schedule.php        - Doctor Schedule table
-online-consultation.php    - Online Consultation request form
-book-appointment.php       - Book an Appointment (full booking form)
-international-patients.php - International Patients services
-lab-report.php             - Lab Report lookup/view/download/verification
+index.php                  - Homepage shim (loads pages/index.php so the site URL stays /index.php)
+router.php                 - Router for the PHP built-in server (php -S localhost:8000 router.php)
+
+pages/                     - Public page entry points (kept in one folder for tidiness & security)
+  index.php                - Homepage
+  about.php                - About Us
+  mission-vision.php       - Mission & Vision
+  management-team.php      - Management Team
+  departments.php          - Departments
+  medical-technology.php   - Medical Technology
+  patient-care-safety.php  - Patient Care & Safety
+  health-packages.php      - Health Packages
+  research-education.php   - Research & Education
+  careers.php              - Careers (with job application form)
+  news-events.php          - News and Events
+  contact.php              - Contact Us (with contact form)
+  services.php             - Our Services (all service types, anchor sections)
+  find-doctor.php          - Find a Doctor (search by name/department/specialty)
+  doctor-schedule.php      - Doctor Schedule table
+  online-consultation.php  - Online Consultation request form
+  book-appointment.php     - Book an Appointment (full booking form)
+  international-patients.php - International Patients services
+  lab-report.php           - Lab Report lookup/view/download/verification
+
+app/Views/pages/           - Page templates rendered by the entry points above
+app/Views/layouts/         - Shared site header/footer layouts
 
 includes/config.php        - Site-wide settings & sample data (departments, doctors, packages, news)
 includes/header.php        - Shared header & navigation menu

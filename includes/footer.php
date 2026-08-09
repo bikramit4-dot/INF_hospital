@@ -7,21 +7,21 @@
     <div class="footer-col">
       <h4>Quick Links</h4>
       <ul>
-        <li><a href="<?php echo e(site_url('pages/pages/about.php'))); ?>">About Us</a></li>
-        <li><a href="<?php echo e(site_url('pages/pages/departments.php'))); ?>">Departments</a></li>
-        <li><a href="<?php echo e(site_url('pages/pages/find-doctor.php'))); ?>">Find a Doctor</a></li>
-        <li><a href="<?php echo e(site_url('pages/pages/careers.php'))); ?>">Careers</a></li>
-        <li><a href="<?php echo e(site_url('pages/pages/contact.php'))); ?>">Contact Us</a></li>
+        <li><a href="<?php echo e(site_url('pages/about.php')); ?>">About Us</a></li>
+        <li><a href="<?php echo e(site_url('pages/departments.php')); ?>">Departments</a></li>
+        <li><a href="<?php echo e(site_url('pages/find-doctor.php')); ?>">Find a Doctor</a></li>
+        <li><a href="<?php echo e(site_url('pages/careers.php')); ?>">Careers</a></li>
+        <li><a href="<?php echo e(site_url('pages/contact.php')); ?>">Contact Us</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
-        <li><a href="<?php echo e(site_url('pages/pages/services.php#emergency'))); ?>">Emergency Services</a></li>
-        <li><a href="<?php echo e(site_url('pages/pages/services.php#opd'))); ?>">Outpatient (OPD)</a></li>
-        <li><a href="<?php echo e(site_url('pages/pages/services.php#ipd'))); ?>">Inpatient (IPD)</a></li>
-        <li><a href="<?php echo e(site_url('pages/pages/lab-report.php'))); ?>">Lab Reports</a></li>
-        <li><a href="<?php echo e(site_url('pages/pages/international-patients.php'))); ?>">International Patients</a></li>
+        <li><a href="<?php echo e(site_url('pages/services.php#emergency')); ?>">Emergency Services</a></li>
+        <li><a href="<?php echo e(site_url('pages/services.php#opd')); ?>">Outpatient (OPD)</a></li>
+        <li><a href="<?php echo e(site_url('pages/services.php#ipd')); ?>">Inpatient (IPD)</a></li>
+        <li><a href="<?php echo e(site_url('pages/lab-report.php')); ?>">Lab Reports</a></li>
+        <li><a href="<?php echo e(site_url('pages/international-patients.php')); ?>">International Patients</a></li>
       </ul>
     </div>
     <div class="footer-col">

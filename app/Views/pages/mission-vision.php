@@ -1,7 +1,7 @@
 <!-- Page banner -->
 <section class="page-banner page-banner-image">
   <div class="container">
-    <div class="breadcrumb" data-aos="fade-up" data-aos-duration="800"><a href="<?php echo e(site_url('pages/pages/index.php'))); ?>">Home</a> / Mission & Vision</div>
+    <div class="breadcrumb" data-aos="fade-up" data-aos-duration="800"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / Mission & Vision</div>
     <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Mission & Vision</h1>
     <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">Our purpose and the future we are building — one patient at a time.</p>
   </div>
@@ -94,6 +94,6 @@
   <div class="container">
     <h2 data-aos="zoom-in" data-aos-duration="1200">Join Us in Building a Healthier Community</h2>
     <p data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="100">Experience care driven by compassion, excellence, and innovation.</p>
-    <a href="<?php echo e(site_url('pages/pages/book-appointment.php'))); ?>" class="btn" style="background:#fff;color:var(--accent);" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">Book an Appointment</a>
+    <a href="<?php echo e(site_url('pages/book-appointment.php')); ?>" class="btn" style="background:#fff;color:var(--accent);" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">Book an Appointment</a>
   </div>
 </section>

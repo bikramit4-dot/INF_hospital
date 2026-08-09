@@ -1,7 +1,7 @@
 <section class="page-banner">
   <div class="container">
     <h1>Online Consultation</h1>
-    <div class="breadcrumb"><a href="<?php echo e(site_url('pages/pages/index.php'))); ?>">Home</a> / Online Consultation</div>
+    <div class="breadcrumb"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / Online Consultation</div>
   </div>
 </section>
 
@@ -23,7 +23,7 @@
       <?php foreach ($errors as $err): ?>
         <div class="alert alert-error"><?php echo e($err); ?></div>
       <?php endforeach; ?>
-      <form method="POST" action="<?php echo e(site_url('pages/pages/online-consultation.php'))); ?>">
+      <form method="POST" action="<?php echo e(site_url('pages/online-consultation.php')); ?>">
         <input type="hidden" name="csrf_token" value="<?php echo e($csrf_token); ?>">
         <div class="form-group">
           <label>Full Name *</label>
