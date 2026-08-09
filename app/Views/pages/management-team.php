@@ -1,7 +1,7 @@
 <!-- Page banner -->
 <section class="page-banner page-banner-image">
   <div class="container">
-    <div class="breadcrumb" data-aos="fade-up" data-aos-duration="800"><a href="<?php echo e(site_url('index.php')); ?>">Home</a> / Management Team</div>
+    <div class="breadcrumb" data-aos="fade-up" data-aos-duration="800"><a href="<?php echo e(site_url('pages/pages/index.php'))); ?>">Home</a> / Management Team</div>
     <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Management Team</h1>
     <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">The experienced leaders guiding our mission of compassionate, world-class healthcare.</p>
   </div>
@@ -43,6 +43,6 @@
   <div class="container">
     <h2 data-aos="zoom-in" data-aos-duration="1200">Ready to Experience Better Care?</h2>
     <p data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="100">Our team is available 24/7. Book an appointment online or call our emergency line.</p>
-    <a href="<?php echo e(site_url('book-appointment.php')); ?>" class="btn" style="background:#fff;color:var(--accent);" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">Book an Appointment</a>
+    <a href="<?php echo e(site_url('pages/pages/book-appointment.php'))); ?>" class="btn" style="background:#fff;color:var(--accent);" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">Book an Appointment</a>
   </div>
 </section>

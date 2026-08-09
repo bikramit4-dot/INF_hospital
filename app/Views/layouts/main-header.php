@@ -38,7 +38,7 @@ function header_nav_active(string $link, string $current): string
 <!-- Main header: brand + quick actions -->
 <header class="site-header">
   <div class="container header-main">
-    <a href="<?php echo e(site_url('index.php')); ?>" class="logo" aria-label="<?php echo e(SITE_NAME); ?>">
+    <a href="<?php echo e(site_url('pages/pages/index.php'))); ?>" class="logo" aria-label="<?php echo e(SITE_NAME); ?>">
       <img src="<?php echo e(site_url('images/logo.png')); ?>" alt="<?php echo e(SITE_NAME); ?>" class="logo-img">
     </a>
 
@@ -50,7 +50,7 @@ function header_nav_active(string $link, string $current): string
           <?php echo e(SITE_EMERGENCY); ?>
         </span>
       </a>
-      <a href="<?php echo e(site_url('book-appointment.php')); ?>" class="btn btn-primary nav-cta">Book Appointment</a>
+      <a href="<?php echo e(site_url('pages/pages/book-appointment.php'))); ?>" class="btn btn-primary nav-cta">Book Appointment</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
     </div>
   </div>
@@ -61,14 +61,14 @@ function header_nav_active(string $link, string $current): string
       <ul class="nav-list">
         <?php foreach ($nav_menu as $label => $item): ?>
         <li class="has-dropdown<?php echo header_nav_active($item['link'], $current); ?>">
-          <a href="<?php echo e(site_url($item['link'])); ?>">
+          <a href="<?php echo e(site_url('pages/' . $item['link'])); ?>">
             <?php echo e($label); ?>
             <?php if (!empty($item['children'])): ?><span class="caret">▾</span><?php endif; ?>
           </a>
           <?php if (!empty($item['children'])): ?>
           <ul class="dropdown">
             <?php foreach ($item['children'] as $clabel => $clink): ?>
-            <li><a href="<?php echo e(site_url($clink)); ?>"><?php echo e($clabel); ?></a></li>
+            <li><a href="<?php echo e(site_url('pages/' . $clink)); ?>"><?php echo e($clabel); ?></a></li>
             <?php endforeach; ?>
           </ul>
           <?php endif; ?>

@@ -1,7 +1,7 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-col">
-      <a href="<?php echo e(site_url('index.php')); ?>" class="footer-logo-link" aria-label="<?php echo e(SITE_NAME); ?>">
+      <a href="<?php echo e(site_url('pages/pages/index.php'))); ?>" class="footer-logo-link" aria-label="<?php echo e(SITE_NAME); ?>">
         <img src="<?php echo e(site_url('images/logo-white.png')); ?>" alt="<?php echo e(SITE_NAME); ?>" class="footer-logo">
       </a>
       <p><?php echo SITE_TAGLINE; ?>. Providing quality, compassionate healthcare to our community with modern medical technology and dedicated specialists.</p>
@@ -9,21 +9,21 @@
     <div class="footer-col">
       <h4>Quick Links</h4>
       <ul>
-        <li><a href="<?php echo e(site_url('about.php')); ?>">About Us</a></li>
-        <li><a href="<?php echo e(site_url('departments.php')); ?>">Departments</a></li>
-        <li><a href="<?php echo e(site_url('find-doctor.php')); ?>">Find a Doctor</a></li>
-        <li><a href="<?php echo e(site_url('careers.php')); ?>">Careers</a></li>
-        <li><a href="<?php echo e(site_url('contact.php')); ?>">Contact Us</a></li>
+        <li><a href="<?php echo e(site_url('pages/pages/about.php'))); ?>">About Us</a></li>
+        <li><a href="<?php echo e(site_url('pages/pages/departments.php'))); ?>">Departments</a></li>
+        <li><a href="<?php echo e(site_url('pages/pages/find-doctor.php'))); ?>">Find a Doctor</a></li>
+        <li><a href="<?php echo e(site_url('pages/pages/careers.php'))); ?>">Careers</a></li>
+        <li><a href="<?php echo e(site_url('pages/pages/contact.php'))); ?>">Contact Us</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
-        <li><a href="<?php echo e(site_url('services.php#emergency')); ?>">Emergency Services</a></li>
-        <li><a href="<?php echo e(site_url('services.php#opd')); ?>">Outpatient (OPD)</a></li>
-        <li><a href="<?php echo e(site_url('services.php#ipd')); ?>">Inpatient (IPD)</a></li>
-        <li><a href="<?php echo e(site_url('lab-report.php')); ?>">Lab Reports</a></li>
-        <li><a href="<?php echo e(site_url('international-patients.php')); ?>">International Patients</a></li>
+        <li><a href="<?php echo e(site_url('pages/pages/services.php#emergency'))); ?>">Emergency Services</a></li>
+        <li><a href="<?php echo e(site_url('pages/pages/services.php#opd'))); ?>">Outpatient (OPD)</a></li>
+        <li><a href="<?php echo e(site_url('pages/pages/services.php#ipd'))); ?>">Inpatient (IPD)</a></li>
+        <li><a href="<?php echo e(site_url('pages/pages/lab-report.php'))); ?>">Lab Reports</a></li>
+        <li><a href="<?php echo e(site_url('pages/pages/international-patients.php'))); ?>">International Patients</a></li>
       </ul>
     </div>
     <div class="footer-col">

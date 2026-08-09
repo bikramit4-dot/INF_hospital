@@ -11,8 +11,8 @@
     </h1>
     <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">Home Hospital is committed to providing world-class healthcare with modern technology, expert specialists and patient-centered service, 24 hours a day.</p>
     <div class="hero-buttons">
-      <a href="<?php echo e(site_url('book-appointment.php')); ?>" class="btn btn-primary" data-aos="zoom-in" data-aos-duration="1200">Book Appointment</a>
-      <a href="<?php echo e(site_url('services.php#emergency')); ?>" class="btn btn-outline" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="100">Emergency Services</a>
+      <a href="<?php echo e(site_url('pages/pages/book-appointment.php'))); ?>" class="btn btn-primary" data-aos="zoom-in" data-aos-duration="1200">Book Appointment</a>
+      <a href="<?php echo e(site_url('pages/pages/services.php#emergency'))); ?>" class="btn btn-outline" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="100">Emergency Services</a>
     </div>
   </div>
 </section>
@@ -51,7 +51,7 @@
               <div class="service-card-body">
                 <h3><?php echo e($s['title']); ?></h3>
                 <p><?php echo e($s['description']); ?></p>
-                <a class="view-more" href="<?php echo e(site_url('services.php#' . $s['slug'])); ?>">View More <span class="vm-arrow">&rarr;</span></a>
+                <a class="view-more" href="<?php echo e(site_url('pages/services.php#') . $s['slug'])); ?>">View More <span class="vm-arrow">&rarr;</span></a>
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@
       <button class="carousel-btn carousel-btn-next" type="button" data-carousel-next aria-label="Next services">&#8250;</button>
     </div>
     <?php endif; ?>
-    <p class="text-center mt-20"><a href="<?php echo e(site_url('services.php')); ?>" class="btn btn-secondary btn-view-all" data-aos="zoom-in" data-aos-duration="1200">View All Services</a></p>
+    <p class="text-center mt-20"><a href="<?php echo e(site_url('pages/pages/services.php'))); ?>" class="btn btn-secondary btn-view-all" data-aos="zoom-in" data-aos-duration="1200">View All Services</a></p>
   </div>
 </section>
 
@@ -90,7 +90,7 @@
                 <div class="dept"><?php echo e($doc['department_name']); ?></div>
                 <p><?php echo e($doc['specialty']); ?></p>
                 <p><?php echo e($doc['experience']); ?> experience</p>
-                <a class="view-more" href="<?php echo e(site_url('book-appointment.php?doctor=' . (int)$doc['id'])); ?>">Book Appointment <span class="vm-arrow">&rarr;</span></a>
+                <a class="view-more" href="<?php echo e(site_url('pages/book-appointment.php?doctor=') . (int)$doc['id'])); ?>">Book Appointment <span class="vm-arrow">&rarr;</span></a>
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@
       <button class="carousel-btn carousel-btn-next" type="button" data-carousel-next aria-label="Next doctors">&#8250;</button>
     </div>
     <?php endif; ?>
-    <p class="text-center mt-20"><a href="<?php echo e(site_url('find-doctor.php')); ?>" class="btn btn-secondary" data-aos="zoom-in" data-aos-duration="1200">Find a Doctor</a></p>
+    <p class="text-center mt-20"><a href="<?php echo e(site_url('pages/pages/find-doctor.php'))); ?>" class="btn btn-secondary" data-aos="zoom-in" data-aos-duration="1200">Find a Doctor</a></p>
   </div>
 </section>
 
@@ -120,7 +120,7 @@
       </div>
       <?php endforeach; ?>
     </div>
-    <p class="text-center mt-20"><a href="<?php echo e(site_url('health-packages.php')); ?>" class="btn btn-secondary" data-aos="zoom-in" data-aos-duration="1200">View All Packages</a></p>
+    <p class="text-center mt-20"><a href="<?php echo e(site_url('pages/pages/health-packages.php'))); ?>" class="btn btn-secondary" data-aos="zoom-in" data-aos-duration="1200">View All Packages</a></p>
   </div>
 </section>
 
@@ -128,6 +128,6 @@
   <div class="container">
     <h2 data-aos="zoom-in" data-aos-duration="1200">Need Medical Assistance?</h2>
     <p data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="100">Our team is available 24/7. Book an appointment online or call our emergency line.</p>
-    <a href="<?php echo e(site_url('book-appointment.php')); ?>" class="btn" style="background:#fff;color:var(--accent);" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">Book an Appointment</a>
+    <a href="<?php echo e(site_url('pages/pages/book-appointment.php'))); ?>" class="btn" style="background:#fff;color:var(--accent);" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">Book an Appointment</a>
   </div>
 </section>

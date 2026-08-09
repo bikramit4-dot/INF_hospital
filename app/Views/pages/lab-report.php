@@ -1,7 +1,7 @@
 <section class="page-banner">
   <div class="container">
     <h1 data-aos="fade-up" data-aos-duration="1000">Lab Report</h1>
-    <div class="breadcrumb" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="<?php echo e(site_url('index.php')); ?>">Home</a> / Lab Report</div>
+    <div class="breadcrumb" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="<?php echo e(site_url('pages/pages/index.php'))); ?>">Home</a> / Lab Report</div>
   </div>
 </section>
 
@@ -17,7 +17,7 @@
       <?php if ($lookup_error): ?>
         <div class="alert alert-error"><?php echo e($lookup_error); ?></div>
       <?php endif; ?>
-      <form method="POST" action="<?php echo e(site_url('lab-report.php#view')); ?>">
+      <form method="POST" action="<?php echo e(site_url('pages/pages/lab-report.php#view'))); ?>">
         <input type="hidden" name="csrf_token" value="<?php echo e($csrf_token); ?>">
         <div class="form-row">
           <div class="form-group">
@@ -91,7 +91,7 @@
       <p>Verify the authenticity of a printed lab report using its unique Report ID.</p>
     </div>
     <div class="form-box" data-aos="zoom-in" data-aos-duration="1200">
-      <form method="POST" action="<?php echo e(site_url('lab-report.php#view')); ?>">
+      <form method="POST" action="<?php echo e(site_url('pages/pages/lab-report.php#view'))); ?>">
         <input type="hidden" name="csrf_token" value="<?php echo e($csrf_token); ?>">
         <div class="form-group">
           <label>Report ID</label>
