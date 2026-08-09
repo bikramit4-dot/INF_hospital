@@ -1,4 +1,9 @@
 <section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+    poster="<?php echo e(site_url('images/gettyimages-1390026192.jpg')); ?>" aria-hidden="true">
+    <source src="<?php echo e(site_url('images/Olive%20and%20White%20Modern%20Spa%20and%20Wellness%20Banner%20Landscape.mp4')); ?>" type="video/mp4">
+  </video>
+  <div class="hero-overlay" aria-hidden="true"></div>
   <div class="container hero-inner">
     <h1 data-aos="fade-up" data-aos-duration="1000">
       <span class="hero-title">Welcome to International Nepal Fellowship (Nepal)</span>
