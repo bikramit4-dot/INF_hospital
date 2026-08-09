@@ -379,6 +379,19 @@ table th{background:var(--light);font-weight:600;}
 /* CTA band with photo */
 .cta-about{position:relative;background:linear-gradient(120deg, rgba(0,0,0,.86), rgba(140,20,30,.68)), url('../images/gettyimages-1390026192.jpg') center/cover;}
 
+/* ============ Mission & Vision page ============ */
+.mv-card{padding:0;overflow:hidden;display:flex;flex-direction:column;}
+.mv-photo{height:190px;flex:none;overflow:hidden;}
+.mv-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.mv-body{padding:26px 28px 30px;}
+.mv-body .icon{margin-bottom:16px;}
+.mv-body h2{font-size:22px;margin-bottom:10px;}
+.mv-body p{color:var(--gray);font-size:14.5px;}
+.mv-points{margin-top:16px;display:grid;gap:9px;}
+.mv-points li{font-size:13.5px;color:var(--gray);display:flex;gap:9px;align-items:flex-start;}
+.mv-points li::before{content:'✓';color:var(--accent);font-weight:700;flex:none;}
+.site .card:hover .mv-points li::before{color:#fff;}
+
 /* Footer */
 .site-footer{background:var(--dark);color:#cfcfcf;padding:60px 0 0;}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:34px;padding-bottom:40px;}
