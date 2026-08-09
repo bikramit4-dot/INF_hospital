@@ -12,7 +12,7 @@
   <div class="container about-intro-grid">
     <div class="about-media" data-aos="fade-right" data-aos-duration="1000">
       <img class="about-media-main" src="images/about-care.jpg" alt="A doctor and patient in a caring consultation at <?php echo e(SITE_NAME); ?>">
-      <img class="about-media-secondary" src="images/gettyimages-1390026192.jpg" alt="Inside the hospital facility">
+      <img class="about-media-secondary" src="images/gettyimages-1390026192.jpg" alt="Inside the hospital facility" loading="lazy">
       <div class="about-badge">
         <strong>25+</strong>
         <span>Years of<br>Excellence</span>
