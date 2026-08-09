@@ -1,7 +1,7 @@
 <!-- Page banner -->
 <section class="page-banner page-banner-image">
   <div class="container">
-    <div class="breadcrumb" data-aos="fade-up" data-aos-duration="800"><a href="index.php">Home</a> / About Us</div>
+    <div class="breadcrumb" data-aos="fade-up" data-aos-duration="800"><a href="<?php echo e(site_url('index.php')); ?>">Home</a> / About Us</div>
     <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">About Us</h1>
     <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">Compassionate care and advanced medicine — proudly serving our community for over 25 years.</p>
   </div>
@@ -11,8 +11,8 @@
 <section class="section">
   <div class="container about-intro-grid">
     <div class="about-media" data-aos="fade-right" data-aos-duration="1000">
-      <img class="about-media-main" src="images/about-care.jpg" alt="A doctor and patient in a caring consultation at <?php echo e(SITE_NAME); ?>">
-      <img class="about-media-secondary" src="images/gettyimages-1390026192.jpg" alt="Inside the hospital facility" loading="lazy">
+      <img class="about-media-main" src="<?php echo e(site_url('images/about-care.jpg')); ?>" alt="A doctor and patient in a caring consultation at <?php echo e(SITE_NAME); ?>">
+      <img class="about-media-secondary" src="<?php echo e(site_url('images/gettyimages-1390026192.jpg')); ?>" alt="Inside the hospital facility" loading="lazy">
       <div class="about-badge">
         <strong>25+</strong>
         <span>Years of<br>Excellence</span>
@@ -30,8 +30,8 @@
         <li><span class="feature-check">✔</span> Modern technology, compassionate hands</li>
       </ul>
       <div class="about-actions">
-        <a href="book-appointment.php" class="btn btn-secondary">Book an Appointment</a>
-        <a href="contact.php" class="btn btn-outline-dark">Contact Us</a>
+        <a href="<?php echo e(site_url('book-appointment.php')); ?>" class="btn btn-secondary">Book an Appointment</a>
+        <a href="<?php echo e(site_url('contact.php')); ?>" class="btn btn-outline-dark">Contact Us</a>
       </div>
     </div>
   </div>
@@ -118,6 +118,6 @@
   <div class="container">
     <h2 data-aos="zoom-in" data-aos-duration="1200">Ready to Experience Better Care?</h2>
     <p data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="100">Our team is available 24/7. Book an appointment online or call our emergency line.</p>
-    <a href="book-appointment.php" class="btn" style="background:#fff;color:var(--accent);" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">Book an Appointment</a>
+    <a href="<?php echo e(site_url('book-appointment.php')); ?>" class="btn" style="background:#fff;color:var(--accent);" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">Book an Appointment</a>
   </div>
 </section>

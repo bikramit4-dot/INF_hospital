@@ -1,7 +1,7 @@
 <section class="page-banner">
   <div class="container">
     <h1>Departments</h1>
-    <div class="breadcrumb"><a href="index.php">Home</a> / Departments</div>
+    <div class="breadcrumb"><a href="<?php echo e(site_url('index.php')); ?>">Home</a> / Departments</div>
   </div>
 </section>
 
@@ -22,7 +22,7 @@
         <?php endif; ?>
         <h3><?php echo e($dept['name']); ?></h3>
         <p><?php echo e($dept['description']); ?></p>
-        <p class="mt-20"><a href="find-doctor.php?by=department&dept=<?php echo urlencode($dept['name']); ?>" style="color:var(--primary); font-weight:600;">View Doctors →</a></p>
+        <p class="mt-20"><a href="<?php echo e(site_url('find-doctor.php?by=department&dept=' . urlencode($dept['name']))); ?>" style="color:var(--primary); font-weight:600;">View Doctors →</a></p>
       </div>
       <?php endforeach; ?>
     </div>

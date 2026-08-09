@@ -1,7 +1,7 @@
 <section class="page-banner">
   <div class="container">
     <h1>Medical Technology</h1>
-    <div class="breadcrumb"><a href="index.php">Home</a> / Medical Technology</div>
+    <div class="breadcrumb"><a href="<?php echo e(site_url('index.php')); ?>">Home</a> / Medical Technology</div>
   </div>
 </section>
 

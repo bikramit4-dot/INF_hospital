@@ -1,7 +1,7 @@
 <section class="page-banner">
   <div class="container">
     <h1>News and Events</h1>
-    <div class="breadcrumb"><a href="index.php">Home</a> / News and Events</div>
+    <div class="breadcrumb"><a href="<?php echo e(site_url('index.php')); ?>">Home</a> / News and Events</div>
   </div>
 </section>
 

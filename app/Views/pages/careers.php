@@ -1,7 +1,7 @@
 <section class="page-banner">
   <div class="container">
     <h1>Careers</h1>
-    <div class="breadcrumb"><a href="index.php">Home</a> / Careers</div>
+    <div class="breadcrumb"><a href="<?php echo e(site_url('index.php')); ?>">Home</a> / Careers</div>
   </div>
 </section>
 
@@ -41,7 +41,7 @@
       <?php foreach ($errors as $err): ?>
         <div class="alert alert-error"><?php echo e($err); ?></div>
       <?php endforeach; ?>
-      <form method="POST" action="careers.php#apply" enctype="multipart/form-data">
+      <form method="POST" action="<?php echo e(site_url('careers.php#apply')); ?>" enctype="multipart/form-data">
         <input type="hidden" name="csrf_token" value="<?php echo e($csrf_token); ?>">
         <div class="form-row">
           <div class="form-group">

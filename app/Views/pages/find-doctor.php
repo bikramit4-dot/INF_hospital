@@ -1,20 +1,20 @@
 <section class="page-banner">
   <div class="container">
     <h1 data-aos="fade-up" data-aos-duration="1000">Find a Doctor</h1>
-    <div class="breadcrumb" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.php">Home</a> / Find a Doctor</div>
+    <div class="breadcrumb" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="<?php echo e(site_url('index.php')); ?>">Home</a> / Find a Doctor</div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
     <div class="tabs" data-aos="fade-up" data-aos-duration="1000">
-      <a href="find-doctor.php?by=name" class="tab-btn <?php echo $by=='name'?'active':''; ?>">Search by Name</a>
-      <a href="find-doctor.php?by=department" class="tab-btn <?php echo $by=='department'?'active':''; ?>">Search by Department</a>
-      <a href="find-doctor.php?by=specialty" class="tab-btn <?php echo $by=='specialty'?'active':''; ?>">Search by Specialty</a>
+      <a href="<?php echo e(site_url('find-doctor.php?by=name')); ?>" class="tab-btn <?php echo $by=='name'?'active':''; ?>">Search by Name</a>
+      <a href="<?php echo e(site_url('find-doctor.php?by=department')); ?>" class="tab-btn <?php echo $by=='department'?'active':''; ?>">Search by Department</a>
+      <a href="<?php echo e(site_url('find-doctor.php?by=specialty')); ?>" class="tab-btn <?php echo $by=='specialty'?'active':''; ?>">Search by Specialty</a>
     </div>
 
     <div class="form-box mb-20" data-aos="zoom-in" data-aos-duration="1200">
-      <form method="GET" action="find-doctor.php" class="form-row" style="align-items:end;">
+      <form method="GET" action="<?php echo e(site_url('find-doctor.php')); ?>" class="form-row" style="align-items:end;">
         <input type="hidden" name="by" value="<?php echo e($by); ?>">
         <?php if ($by === 'department'): ?>
           <div class="form-group" style="grid-column: span 1;">
@@ -55,7 +55,7 @@
           <p><?php echo e($doc['specialty']); ?></p>
           <p><?php echo e($doc['experience']); ?> experience</p>
           <p><?php echo e($doc['days']); ?>, <?php echo e($doc['time_slot']); ?></p>
-          <a href="book-appointment.php?doctor=<?php echo urlencode($doc['name']); ?>" class="btn btn-secondary mt-20" data-aos="zoom-in" data-aos-duration="1200">Book Appointment</a>
+          <a href="<?php echo e(site_url('book-appointment.php?doctor=' . urlencode($doc['name']))); ?>" class="btn btn-secondary mt-20" data-aos="zoom-in" data-aos-duration="1200">Book Appointment</a>
         </div>
       </div>
       <?php endforeach; ?>

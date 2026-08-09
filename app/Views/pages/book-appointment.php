@@ -1,7 +1,7 @@
 <section class="page-banner">
   <div class="container">
     <h1>Book an Appointment</h1>
-    <div class="breadcrumb"><a href="index.php">Home</a> / Book an Appointment</div>
+    <div class="breadcrumb"><a href="<?php echo e(site_url('index.php')); ?>">Home</a> / Book an Appointment</div>
   </div>
 </section>
 
@@ -15,7 +15,7 @@
         <p style="color:var(--gray); margin:16px 0;">Thank you. Your appointment request has been submitted successfully. Your booking reference number is:</p>
         <h3 style="color:var(--primary); font-size:26px; margin-bottom:20px;"><?php echo e($booking_ref); ?></h3>
         <p style="color:var(--gray);">Our team will contact you shortly at the phone number/email provided to confirm your exact appointment slot.</p>
-        <a href="book-appointment.php" class="btn btn-secondary mt-20">Book Another Appointment</a>
+        <a href="<?php echo e(site_url('book-appointment.php')); ?>" class="btn btn-secondary mt-20">Book Another Appointment</a>
       </div>
     <?php else: ?>
 
@@ -30,7 +30,7 @@
     <?php endforeach; ?>
 
     <div class="form-box">
-      <form method="POST" action="book-appointment.php">
+      <form method="POST" action="<?php echo e(site_url('book-appointment.php')); ?>">
         <input type="hidden" name="csrf_token" value="<?php echo e($csrf_token); ?>">
 
         <h3 class="mb-20">1. Select Department</h3>

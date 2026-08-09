@@ -1,7 +1,7 @@
 <section class="page-banner">
   <div class="container">
     <h1 data-aos="fade-up" data-aos-duration="1000">Our Services</h1>
-    <div class="breadcrumb" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.php">Home</a> / Our Services</div>
+    <div class="breadcrumb" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="<?php echo e(site_url('index.php')); ?>">Home</a> / Our Services</div>
   </div>
 </section>
 
@@ -25,6 +25,6 @@
   <div class="container">
     <h2 data-aos="zoom-in" data-aos-duration="1200">Need to Schedule a Visit?</h2>
     <p data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="100">Book an appointment with the right department in just a few clicks.</p>
-    <a href="book-appointment.php" class="btn" style="background:#fff;color:var(--accent);" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">Book an Appointment</a>
+    <a href="<?php echo e(site_url('book-appointment.php')); ?>" class="btn" style="background:#fff;color:var(--accent);" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">Book an Appointment</a>
   </div>
 </section>

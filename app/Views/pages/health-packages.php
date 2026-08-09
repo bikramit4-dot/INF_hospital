@@ -1,7 +1,7 @@
 <section class="page-banner">
   <div class="container">
     <h1>Health Packages</h1>
-    <div class="breadcrumb"><a href="index.php">Home</a> / Health Packages</div>
+    <div class="breadcrumb"><a href="<?php echo e(site_url('index.php')); ?>">Home</a> / Health Packages</div>
   </div>
 </section>
 
@@ -18,7 +18,7 @@
         <h3><?php echo e($pkg['name']); ?></h3>
         <p class="mb-20"><?php echo e($pkg['includes_text']); ?></p>
         <strong style="color:var(--primary); font-size:18px; display:block; margin-bottom:16px;"><?php echo e($pkg['price']); ?></strong>
-        <a href="book-appointment.php" class="btn btn-secondary">Book This Package</a>
+        <a href="<?php echo e(site_url('book-appointment.php')); ?>" class="btn btn-secondary">Book This Package</a>
       </div>
       <?php endforeach; ?>
     </div>

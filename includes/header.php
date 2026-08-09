@@ -13,7 +13,7 @@ function header_nav_active(string $link, string $current): string
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php echo e(isset($page_title) ? $page_title . ' | ' . SITE_NAME : SITE_NAME); ?></title>
-<link rel="stylesheet" href="css/style.css?v=14">
+<link rel="stylesheet" href="<?php echo e(site_url('css/style.css?v=14')); ?>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -37,8 +37,8 @@ function header_nav_active(string $link, string $current): string
 <!-- Main header: brand + quick actions -->
 <header class="site-header">
   <div class="container header-main">
-    <a href="index.php" class="logo" aria-label="<?php echo e(SITE_NAME); ?>">
-      <img src="images/logo.png" alt="<?php echo e(SITE_NAME); ?>" class="logo-img">
+    <a href="<?php echo e(site_url('index.php')); ?>" class="logo" aria-label="<?php echo e(SITE_NAME); ?>">
+      <img src="<?php echo e(site_url('images/logo.png')); ?>" alt="<?php echo e(SITE_NAME); ?>" class="logo-img">
     </a>
 
     <div class="header-actions">
@@ -49,7 +49,7 @@ function header_nav_active(string $link, string $current): string
           <?php echo e(SITE_EMERGENCY); ?>
         </span>
       </a>
-      <a href="book-appointment.php" class="btn btn-primary nav-cta">Book Appointment</a>
+      <a href="<?php echo e(site_url('book-appointment.php')); ?>" class="btn btn-primary nav-cta">Book Appointment</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
     </div>
   </div>
@@ -60,7 +60,7 @@ function header_nav_active(string $link, string $current): string
       <ul class="nav-list">
         <?php foreach ($nav_menu as $label => $item): ?>
         <li class="has-dropdown<?php echo header_nav_active($item['link'], $current); ?>">
-          <a href="<?php echo e($item['link']); ?>">
+          <a href="<?php echo e(site_url($item['link'])); ?>">
             <?php echo e($label); ?>
             <?php if (!empty($item['children'])): ?><span class="caret">▾</span><?php endif; ?>
           </a>
