@@ -20,10 +20,10 @@
       <div class="card team-card" data-aos="fade-up" data-aos-duration="900" data-aos-delay="<?php echo ($i % 3) * 100; ?>">
         <?php if (!empty($member['photo_url'])): ?>
         <div class="team-photo">
-          <img src="<?php echo e(site_url($member['photo_url'])); ?>" alt="Portrait of <?php echo e($member['name']); ?>">
+          <img src="<?php echo e(site_url($member['photo_url'])); ?>" alt="Portrait of <?php echo e($member['name']); ?>" loading="lazy">
         </div>
         <?php else: ?>
-        <div class="team-photo team-avatar team-avatar-<?php echo (($i % 6) + 1); ?>" aria-hidden="true"><?php echo e($member['initials']); ?></div>
+        <div class="team-photo team-avatar team-avatar-<?php echo (($i % 6) + 1); ?>" aria-hidden="true"><?php echo e($member['initials'] ?? '?'); ?></div>
         <?php endif; ?>
         <div class="team-info">
           <span class="team-role"><?php echo e($member['role']); ?></span>

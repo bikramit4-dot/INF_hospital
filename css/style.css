@@ -393,7 +393,7 @@ table th{background:var(--light);font-weight:600;}
 
 /* ============ Management Team page ============ */
 .team-card{padding:0;overflow:hidden;text-align:center;display:flex;flex-direction:column;}
-.team-photo{height:230px;flex:none;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.team-photo{height:230px;flex:none;display:flex;align-items:center;justify-content:center;}
 .team-photo img{width:100%;height:100%;object-fit:cover;display:block;}
 .team-avatar{font-size:60px;color:#fff;font-family:var(--font-head);font-weight:700;letter-spacing:2px;text-shadow:0 4px 16px rgba(0,0,0,.25);}
 .team-avatar-1{background:linear-gradient(135deg,#d92332 0%,#8f121d 100%);}
