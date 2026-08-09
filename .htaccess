@@ -26,3 +26,31 @@ Options -Indexes
     Deny from all
   </IfModule>
 </FilesMatch>
+
+# ----------------------------------------------------------
+# Old root page URLs keep working: internally serve the new /pages/
+# files. New links point straight at /pages/*.php; old bookmarks and
+# shared links are handled transparently (no redirect, no hardcoded
+# path, so it works wherever the site is hosted).
+# ----------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^about\.php$ pages/about.php [L]
+  RewriteRule ^book-appointment\.php$ pages/book-appointment.php [L]
+  RewriteRule ^careers\.php$ pages/careers.php [L]
+  RewriteRule ^contact\.php$ pages/contact.php [L]
+  RewriteRule ^departments\.php$ pages/departments.php [L]
+  RewriteRule ^doctor-schedule\.php$ pages/doctor-schedule.php [L]
+  RewriteRule ^find-doctor\.php$ pages/find-doctor.php [L]
+  RewriteRule ^health-packages\.php$ pages/health-packages.php [L]
+  RewriteRule ^international-patients\.php$ pages/international-patients.php [L]
+  RewriteRule ^lab-report\.php$ pages/lab-report.php [L]
+  RewriteRule ^management-team\.php$ pages/management-team.php [L]
+  RewriteRule ^medical-technology\.php$ pages/medical-technology.php [L]
+  RewriteRule ^mission-vision\.php$ pages/mission-vision.php [L]
+  RewriteRule ^news-events\.php$ pages/news-events.php [L]
+  RewriteRule ^online-consultation\.php$ pages/online-consultation.php [L]
+  RewriteRule ^patient-care-safety\.php$ pages/patient-care-safety.php [L]
+  RewriteRule ^research-education\.php$ pages/research-education.php [L]
+  RewriteRule ^services\.php$ pages/services.php [L]
+</IfModule>
