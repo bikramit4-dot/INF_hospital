@@ -32,6 +32,35 @@ class PageContent extends Model
     }
 
     /**
+     * Fetch all custom (non-empty) content for a page in a single query,
+     * keyed by section. Rows with empty content are omitted so callers
+     * can use array_key_exists() to detect custom values.
+     */
+    public static function forPage(string $page): array
+    {
+        $out = [];
+        foreach (static::where('page = :p', [':p' => $page]) as $row) {
+            if (isset($row['content']) && $row['content'] !== '') {
+                $out[$row['section']] = (string) $row['content'];
+            }
+        }
+        return $out;
+    }
+
+    /**
+     * Fetch every row for a page (including empty ones) keyed by section.
+     * Used by the admin editor to tell customized fields apart from defaults.
+     */
+    public static function allForPage(string $page): array
+    {
+        $out = [];
+        foreach (static::where('page = :p', [':p' => $page]) as $row) {
+            $out[$row['section']] = (string) $row['content'];
+        }
+        return $out;
+    }
+
+    /**
      * Insert or update the content for a page/section.
      * Saving an empty string effectively resets the field to its default.
      */

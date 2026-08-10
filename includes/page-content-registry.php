@@ -92,6 +92,23 @@ $__pages = [
                 ['section' => 'who_feature_2', 'label' => 'Feature 2', 'type' => 'text', 'default' => 'Patient-first approach at every step'],
                 ['section' => 'who_feature_3', 'label' => 'Feature 3', 'type' => 'text', 'default' => 'Modern technology, compassionate hands'],
             ],
+            'Milestones' => [
+                ['section' => 'milestones_kicker', 'label' => 'Kicker', 'type' => 'text', 'default' => 'Our Journey'],
+                ['section' => 'milestones_title', 'label' => 'Heading', 'type' => 'text', 'default' => 'Hospital Milestones'],
+                ['section' => 'milestones_text', 'label' => 'Description', 'type' => 'textarea', 'rows' => 2, 'default' => 'A quarter century of growth, innovation, and service to our community.'],
+                ['section' => 'milestone_1_year', 'label' => 'Milestone 1 — Year', 'type' => 'text', 'default' => '2000'],
+                ['section' => 'milestone_1_title', 'label' => 'Milestone 1 — Title', 'type' => 'text', 'default' => 'A Humble Beginning'],
+                ['section' => 'milestone_1_desc', 'label' => 'Milestone 1 — Description', 'type' => 'textarea', 'rows' => 2, 'default' => 'Founded as a small community clinic in Pokhara with a handful of dedicated staff.'],
+                ['section' => 'milestone_2_year', 'label' => 'Milestone 2 — Year', 'type' => 'text', 'default' => '2008'],
+                ['section' => 'milestone_2_title', 'label' => 'Milestone 2 — Title', 'type' => 'text', 'default' => 'Becoming a Hospital'],
+                ['section' => 'milestone_2_desc', 'label' => 'Milestone 2 — Description', 'type' => 'textarea', 'rows' => 2, 'default' => 'Expanded into a 100-bed multi-specialty hospital serving the wider region.'],
+                ['section' => 'milestone_3_year', 'label' => 'Milestone 3 — Year', 'type' => 'text', 'default' => '2016'],
+                ['section' => 'milestone_3_title', 'label' => 'Milestone 3 — Title', 'type' => 'text', 'default' => 'Advanced Diagnostics'],
+                ['section' => 'milestone_3_desc', 'label' => 'Milestone 3 — Description', 'type' => 'textarea', 'rows' => 2, 'default' => 'Launched our advanced diagnostic and imaging center with modern technology.'],
+                ['section' => 'milestone_4_year', 'label' => 'Milestone 4 — Year', 'type' => 'text', 'default' => '2026'],
+                ['section' => 'milestone_4_title', 'label' => 'Milestone 4 — Title', 'type' => 'text', 'default' => '300+ Beds & Growing'],
+                ['section' => 'milestone_4_desc', 'label' => 'Milestone 4 — Description', 'type' => 'textarea', 'rows' => 2, 'default' => 'Now serving thousands of patients every year with 300+ beds and expert teams.'],
+            ],
             'Why Choose Us' => [
                 ['section' => 'why_kicker', 'label' => 'Kicker', 'type' => 'text', 'default' => 'Why Choose Us'],
                 ['section' => 'why_title', 'label' => 'Heading', 'type' => 'text', 'default' => 'The Home Hospital Difference'],
@@ -230,6 +247,234 @@ $__pages = [
                 ['section' => 'cta_title', 'label' => 'Heading', 'type' => 'text', 'default' => 'Need to Schedule a Visit?'],
                 ['section' => 'cta_text', 'label' => 'Description', 'type' => 'textarea', 'rows' => 2, 'default' => 'Book an appointment with the right department in just a few clicks.'],
                 ['section' => 'cta_btn', 'label' => 'Button Label', 'type' => 'text', 'default' => 'Book an Appointment'],
+            ],
+        ],
+    ],
+
+    // ----------------------------------------------------------------
+    'departments' => [
+        'label' => 'Departments',
+        'icon' => '🏛️',
+        'url' => '../pages/departments.php',
+        'groups' => [
+            'Page Banner' => [
+                ['section' => 'banner_title', 'label' => 'Page Title', 'type' => 'text', 'default' => 'Departments'],
+            ],
+            'Intro Section' => [
+                ['section' => 'dept_kicker', 'label' => 'Kicker', 'type' => 'text', 'default' => 'Specialties'],
+                ['section' => 'dept_title', 'label' => 'Heading', 'type' => 'text', 'default' => 'Our Departments'],
+                ['section' => 'dept_text', 'label' => 'Description', 'type' => 'textarea', 'rows' => 2, 'default' => 'A full range of specialized departments staffed by expert consultants and modern equipment.'],
+            ],
+        ],
+    ],
+
+    // ----------------------------------------------------------------
+    'find-doctor' => [
+        'label' => 'Find a Doctor',
+        'icon' => '🔍',
+        'url' => '../pages/find-doctor.php',
+        'groups' => [
+            'Page Banner' => [
+                ['section' => 'banner_title', 'label' => 'Page Title', 'type' => 'text', 'default' => 'Find a Doctor'],
+            ],
+        ],
+    ],
+
+    // ----------------------------------------------------------------
+    'careers' => [
+        'label' => 'Careers',
+        'icon' => '💼',
+        'url' => '../pages/careers.php',
+        'groups' => [
+            'Page Banner' => [
+                ['section' => 'banner_title', 'label' => 'Page Title', 'type' => 'text', 'default' => 'Careers'],
+            ],
+            'Intro Section' => [
+                ['section' => 'careers_kicker', 'label' => 'Kicker', 'type' => 'text', 'default' => 'Join Our Team'],
+                ['section' => 'careers_title', 'label' => 'Heading', 'type' => 'text', 'default' => 'Current Openings'],
+                ['section' => 'careers_text', 'label' => 'Description', 'type' => 'textarea', 'rows' => 2, 'default' => 'Build a rewarding career with us. Explore our current job openings below.'],
+            ],
+        ],
+    ],
+
+    // ----------------------------------------------------------------
+    'health-packages' => [
+        'label' => 'Health Packages',
+        'icon' => '🩺',
+        'url' => '../pages/health-packages.php',
+        'groups' => [
+            'Page Banner' => [
+                ['section' => 'banner_title', 'label' => 'Page Title', 'type' => 'text', 'default' => 'Health Packages'],
+            ],
+            'Intro Section' => [
+                ['section' => 'packages_kicker', 'label' => 'Kicker', 'type' => 'text', 'default' => 'Preventive Care'],
+                ['section' => 'packages_title', 'label' => 'Heading', 'type' => 'text', 'default' => 'Our Health Checkup Packages'],
+                ['section' => 'packages_text', 'label' => 'Description', 'type' => 'textarea', 'rows' => 2, 'default' => 'Choose from a range of health packages designed for early detection and long-term wellness.'],
+            ],
+        ],
+    ],
+
+    // ----------------------------------------------------------------
+    'lab-report' => [
+        'label' => 'Lab Report',
+        'icon' => '🧪',
+        'url' => '../pages/lab-report.php',
+        'groups' => [
+            'Page Banner' => [
+                ['section' => 'banner_title', 'label' => 'Page Title', 'type' => 'text', 'default' => 'Lab Report'],
+            ],
+            'Report Lookup' => [
+                ['section' => 'report_kicker', 'label' => 'Kicker', 'type' => 'text', 'default' => 'Report Access'],
+                ['section' => 'report_title', 'label' => 'Heading', 'type' => 'text', 'default' => 'View / Download Your Lab Report'],
+                ['section' => 'report_text', 'label' => 'Description', 'type' => 'textarea', 'rows' => 2, 'default' => 'Enter your Report ID and registered phone number to securely access your test results.'],
+            ],
+        ],
+    ],
+
+    // ----------------------------------------------------------------
+    'online-consultation' => [
+        'label' => 'Online Consultation',
+        'icon' => '💻',
+        'url' => '../pages/online-consultation.php',
+        'groups' => [
+            'Page Banner' => [
+                ['section' => 'banner_title', 'label' => 'Page Title', 'type' => 'text', 'default' => 'Online Consultation'],
+            ],
+            'Intro Section' => [
+                ['section' => 'oc_title', 'label' => 'Heading', 'type' => 'text', 'default' => 'Consult a Doctor Online'],
+                ['section' => 'oc_text', 'label' => 'Description', 'type' => 'textarea', 'rows' => 4, 'default' => "Can't visit us in person? Request a video or phone consultation with one of our specialists from the comfort of your home. Fill out the form and our team will confirm your appointment time."],
+            ],
+        ],
+    ],
+
+    // ----------------------------------------------------------------
+    'book-appointment' => [
+        'label' => 'Book an Appointment',
+        'icon' => '📅',
+        'url' => '../pages/book-appointment.php',
+        'groups' => [
+            'Page Banner' => [
+                ['section' => 'banner_title', 'label' => 'Page Title', 'type' => 'text', 'default' => 'Book an Appointment'],
+            ],
+            'Intro Section' => [
+                ['section' => 'ba_kicker', 'label' => 'Kicker', 'type' => 'text', 'default' => '4 Simple Steps'],
+                ['section' => 'ba_title', 'label' => 'Heading', 'type' => 'text', 'default' => 'Schedule Your Visit'],
+                ['section' => 'ba_text', 'label' => 'Description', 'type' => 'textarea', 'rows' => 2, 'default' => 'Select department, choose a doctor, pick your date & time, and fill in your details.'],
+            ],
+        ],
+    ],
+
+    // ----------------------------------------------------------------
+    'doctor-schedule' => [
+        'label' => 'Doctor Schedule',
+        'icon' => '🗓️',
+        'url' => '../pages/doctor-schedule.php',
+        'groups' => [
+            'Page Banner' => [
+                ['section' => 'banner_title', 'label' => 'Page Title', 'type' => 'text', 'default' => 'Doctor Schedule'],
+            ],
+            'Intro Section' => [
+                ['section' => 'ds_kicker', 'label' => 'Kicker', 'type' => 'text', 'default' => 'Availability'],
+                ['section' => 'ds_title', 'label' => 'Heading', 'type' => 'text', 'default' => 'Weekly Doctor Schedule'],
+                ['section' => 'ds_text', 'label' => 'Description', 'type' => 'textarea', 'rows' => 2, 'default' => 'Check availability before booking your appointment.'],
+            ],
+        ],
+    ],
+
+    // ----------------------------------------------------------------
+    'management-team' => [
+        'label' => 'Management Team',
+        'icon' => '👥',
+        'url' => '../pages/management-team.php',
+        'groups' => [
+            'Page Banner' => [
+                ['section' => 'banner_title', 'label' => 'Page Title', 'type' => 'text', 'default' => 'Management Team'],
+                ['section' => 'banner_subtitle', 'label' => 'Subtitle', 'type' => 'textarea', 'rows' => 2, 'default' => 'The experienced leaders guiding our mission of compassionate, world-class healthcare.'],
+            ],
+            'Team Section' => [
+                ['section' => 'mt_kicker', 'label' => 'Kicker', 'type' => 'text', 'default' => 'Leadership'],
+                ['section' => 'mt_title', 'label' => 'Heading', 'type' => 'text', 'default' => 'Meet Our Management Team'],
+                ['section' => 'mt_text', 'label' => 'Description', 'type' => 'textarea', 'rows' => 2, 'default' => "Experienced leaders guiding our hospital's mission to deliver exceptional healthcare."],
+            ],
+            'Call To Action' => [
+                ['section' => 'cta_title', 'label' => 'Heading', 'type' => 'text', 'default' => 'Ready to Experience Better Care?'],
+                ['section' => 'cta_text', 'label' => 'Description', 'type' => 'textarea', 'rows' => 2, 'default' => 'Our team is available 24/7. Book an appointment online or call our emergency line.'],
+                ['section' => 'cta_btn', 'label' => 'Button Label', 'type' => 'text', 'default' => 'Book an Appointment'],
+            ],
+        ],
+    ],
+
+    // ----------------------------------------------------------------
+    'medical-technology' => [
+        'label' => 'Medical Technology',
+        'icon' => '🖥️',
+        'url' => '../pages/medical-technology.php',
+        'groups' => [
+            'Page Banner' => [
+                ['section' => 'banner_title', 'label' => 'Page Title', 'type' => 'text', 'default' => 'Medical Technology'],
+            ],
+            'Intro Section' => [
+                ['section' => 'tech_kicker', 'label' => 'Kicker', 'type' => 'text', 'default' => 'Technology'],
+                ['section' => 'tech_title', 'label' => 'Heading', 'type' => 'text', 'default' => 'Advanced Medical Equipment'],
+                ['section' => 'tech_text', 'label' => 'Description', 'type' => 'textarea', 'rows' => 2, 'default' => 'Our hospital is equipped with the latest medical technology to ensure accurate diagnosis and effective treatment.'],
+            ],
+        ],
+    ],
+
+    // ----------------------------------------------------------------
+    'patient-care-safety' => [
+        'label' => 'Patient Care & Safety',
+        'icon' => '🛡️',
+        'url' => '../pages/patient-care-safety.php',
+        'groups' => [
+            'Page Banner' => [
+                ['section' => 'banner_title', 'label' => 'Page Title', 'type' => 'text', 'default' => 'Patient Care & Safety'],
+            ],
+            'Intro Section' => [
+                ['section' => 'safety_kicker', 'label' => 'Kicker', 'type' => 'text', 'default' => 'Safety First'],
+                ['section' => 'safety_title', 'label' => 'Heading', 'type' => 'text', 'default' => 'Our Commitment to Your Safety'],
+                ['section' => 'safety_text', 'label' => 'Description', 'type' => 'textarea', 'rows' => 2, 'default' => 'Patient safety is our highest priority. We follow international standards to ensure a safe and healing environment.'],
+            ],
+        ],
+    ],
+
+    // ----------------------------------------------------------------
+    'research-education' => [
+        'label' => 'Research & Education',
+        'icon' => '📚',
+        'url' => '../pages/research-education.php',
+        'groups' => [
+            'Page Banner' => [
+                ['section' => 'banner_title', 'label' => 'Page Title', 'type' => 'text', 'default' => 'Research & Education'],
+            ],
+            'Research' => [
+                ['section' => 're_research_title', 'label' => 'Heading', 'type' => 'text', 'default' => 'Medical Research'],
+                ['section' => 're_research_text', 'label' => 'Text', 'type' => 'textarea', 'rows' => 4, 'default' => 'Our hospital is committed to advancing medical knowledge through clinical research and trials. We collaborate with academic institutions and research organizations to study new treatments, improve patient outcomes, and contribute to the global medical community.'],
+            ],
+            'Education' => [
+                ['section' => 're_education_title', 'label' => 'Heading', 'type' => 'text', 'default' => 'Medical Education'],
+                ['section' => 're_education_text', 'label' => 'Text', 'type' => 'textarea', 'rows' => 4, 'default' => 'We are dedicated to training the next generation of healthcare professionals. Our hospital serves as a teaching institution offering residency programs, nursing training, and continuing medical education for practicing doctors.'],
+            ],
+            'Resources Section' => [
+                ['section' => 're_kicker', 'label' => 'Kicker', 'type' => 'text', 'default' => 'Learn More'],
+                ['section' => 're_resources_title', 'label' => 'Heading', 'type' => 'text', 'default' => 'Educational Resources'],
+            ],
+        ],
+    ],
+
+    // ----------------------------------------------------------------
+    'news-events' => [
+        'label' => 'News & Events',
+        'icon' => '📰',
+        'url' => '../pages/news-events.php',
+        'groups' => [
+            'Page Banner' => [
+                ['section' => 'banner_title', 'label' => 'Page Title', 'type' => 'text', 'default' => 'News and Events'],
+            ],
+            'News Section' => [
+                ['section' => 'news_kicker', 'label' => 'Kicker', 'type' => 'text', 'default' => 'Stay Updated'],
+                ['section' => 'news_title', 'label' => 'Heading', 'type' => 'text', 'default' => 'Latest News & Upcoming Events'],
+                ['section' => 'news_text', 'label' => 'Description', 'type' => 'textarea', 'rows' => 2, 'default' => 'Hospital news, health campaigns, medical seminars, and community programs.'],
             ],
         ],
     ],

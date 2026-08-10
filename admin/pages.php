@@ -64,20 +64,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Build the form data for the current page: resolved values (custom or default)
 // plus a flag telling the UI whether the field has been customized.
+// A single query loads every row for the page, so large editors stay fast.
+$custom_rows = PageContent::allForPage($current);
+$defaults = $registry['defaults'];
+
 $page_data = [];
 $field_count = 0;
 foreach ($content_pages[$current]['groups'] as $group_name => $fields) {
     $rows = [];
     foreach ($fields as $f) {
         $section = $f['section'];
+        $raw = $custom_rows[$section] ?? '';
+        $is_custom = $raw !== '';
         $rows[] = [
             'section' => $section,
             'label' => $f['label'],
             'type' => $f['type'] ?? 'text',
             'rows' => (int) ($f['rows'] ?? 4),
             'hint' => $f['hint'] ?? '',
-            'value' => content($current, $section),
-            'is_custom' => PageContent::has($current, $section),
+            'value' => $is_custom ? $raw : ($defaults[$current . "\x1F" . $section] ?? ''),
+            'is_custom' => $is_custom,
         ];
         $field_count++;
     }

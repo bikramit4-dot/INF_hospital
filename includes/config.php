@@ -118,24 +118,25 @@ function e($value) {
 // ----------------------------------------------------------
 function content(string $page, string $section, ?string $default = null): string
 {
-    static $cache = [];
+    static $pageRows = [];
     static $registry = null;
-    $key = $page . "\x1F" . $section;
-    if (array_key_exists($key, $cache)) {
-        return $cache[$key];
+
+    // Load all custom content for the page in one query, then reuse it.
+    if (!isset($pageRows[$page])) {
+        $pageRows[$page] = \App\Models\PageContent::forPage($page);
     }
-    $value = \App\Models\PageContent::get($page, $section);
-    if ($value === '') {
-        if ($default === null) {
-            if ($registry === null) {
-                $registry = require __DIR__ . '/page-content-registry.php';
-            }
-            $default = $registry['defaults'][$key] ?? '';
+    if (array_key_exists($section, $pageRows[$page])) {
+        return $pageRows[$page][$section];
+    }
+
+    // Not customized -> registry default (or explicit fallback).
+    if ($default === null) {
+        if ($registry === null) {
+            $registry = require __DIR__ . '/page-content-registry.php';
         }
-        $value = (string) $default;
+        $default = $registry['defaults'][$page . "\x1F" . $section] ?? '';
     }
-    $cache[$key] = $value;
-    return $value;
+    return (string) $default;
 }
 
 // Same as content(), but splits the value into trimmed, non-empty lines
