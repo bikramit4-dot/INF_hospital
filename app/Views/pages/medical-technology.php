@@ -1,6 +1,6 @@
 <section class="page-banner">
   <div class="container">
-    <h1>Medical Technology</h1>
+    <h1><?php echo e(content('medical-technology', 'banner_title')); ?></h1>
     <div class="breadcrumb"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / Medical Technology</div>
   </div>
 </section>
@@ -8,9 +8,9 @@
 <section class="section">
   <div class="container">
     <div class="section-title">
-      <span>Technology</span>
-      <h2>Advanced Medical Equipment</h2>
-      <p>Our hospital is equipped with the latest medical technology to ensure accurate diagnosis and effective treatment.</p>
+      <span><?php echo e(content('medical-technology', 'tech_kicker')); ?></span>
+      <h2><?php echo e(content('medical-technology', 'tech_title')); ?></h2>
+      <p><?php echo e(content('medical-technology', 'tech_text')); ?></p>
     </div>
     <div class="grid grid-3">
       <div class="card">

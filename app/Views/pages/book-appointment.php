@@ -1,6 +1,6 @@
 <section class="page-banner">
   <div class="container">
-    <h1>Book an Appointment</h1>
+    <h1><?php echo e(content('book-appointment', 'banner_title')); ?></h1>
     <div class="breadcrumb"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / Book an Appointment</div>
   </div>
 </section>
@@ -20,9 +20,9 @@
     <?php else: ?>
 
     <div class="section-title" style="max-width:100%;">
-      <span>4 Simple Steps</span>
-      <h2>Schedule Your Visit</h2>
-      <p>Select department, choose a doctor, pick your date & time, and fill in your details.</p>
+      <span><?php echo e(content('book-appointment', 'ba_kicker')); ?></span>
+      <h2><?php echo e(content('book-appointment', 'ba_title')); ?></h2>
+      <p><?php echo e(content('book-appointment', 'ba_text')); ?></p>
     </div>
 
     <?php foreach ($errors as $err): ?>

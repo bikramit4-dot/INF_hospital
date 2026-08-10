@@ -6,6 +6,9 @@ Sections
 --------
 
 - **Overview** — dashboard with live counts and recent activity
+- **Pages** — edit the text content of every public page (banners, hero
+  text, stats, section intros, CTAs, milestones, contact details, footer
+  text). Fields left blank automatically show the site default.
 - **Departments / Doctors / Services / Health Packages / Team Members /
   Lab Reports / News & Events** — full add, edit, delete management
   (Lab Reports also has per-report result parameters)

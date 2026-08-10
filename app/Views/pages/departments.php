@@ -1,6 +1,6 @@
 <section class="page-banner">
   <div class="container">
-    <h1>Departments</h1>
+    <h1><?php echo e(content('departments', 'banner_title')); ?></h1>
     <div class="breadcrumb"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / Departments</div>
   </div>
 </section>
@@ -8,9 +8,9 @@
 <section class="section">
   <div class="container">
     <div class="section-title">
-      <span>Specialties</span>
-      <h2>Our Departments</h2>
-      <p>A full range of specialized departments staffed by expert consultants and modern equipment.</p>
+      <span><?php echo e(content('departments', 'dept_kicker')); ?></span>
+      <h2><?php echo e(content('departments', 'dept_title')); ?></h2>
+      <p><?php echo e(content('departments', 'dept_text')); ?></p>
     </div>
     <div class="grid grid-3">
       <?php foreach ($departments as $dept): ?>

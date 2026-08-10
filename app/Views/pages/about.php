@@ -84,30 +84,30 @@
 <section class="section">
   <div class="container">
     <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
-      <span>Our Journey</span>
-      <h2>Hospital Milestones</h2>
-      <p>A quarter century of growth, innovation, and service to our community.</p>
+      <span><?php echo e(content('about', 'milestones_kicker')); ?></span>
+      <h2><?php echo e(content('about', 'milestones_title')); ?></h2>
+      <p><?php echo e(content('about', 'milestones_text')); ?></p>
     </div>
     <div class="timeline">
       <div class="timeline-item" data-aos="fade-up" data-aos-duration="900">
-        <span class="timeline-year">2000</span>
-        <h3>A Humble Beginning</h3>
-        <p>Founded as a small community clinic in Pokhara with a handful of dedicated staff.</p>
+        <span class="timeline-year"><?php echo e(content('about', 'milestone_1_year')); ?></span>
+        <h3><?php echo e(content('about', 'milestone_1_title')); ?></h3>
+        <p><?php echo e(content('about', 'milestone_1_desc')); ?></p>
       </div>
       <div class="timeline-item" data-aos="fade-up" data-aos-duration="900">
-        <span class="timeline-year">2008</span>
-        <h3>Becoming a Hospital</h3>
-        <p>Expanded into a 100-bed multi-specialty hospital serving the wider region.</p>
+        <span class="timeline-year"><?php echo e(content('about', 'milestone_2_year')); ?></span>
+        <h3><?php echo e(content('about', 'milestone_2_title')); ?></h3>
+        <p><?php echo e(content('about', 'milestone_2_desc')); ?></p>
       </div>
       <div class="timeline-item" data-aos="fade-up" data-aos-duration="900">
-        <span class="timeline-year">2016</span>
-        <h3>Advanced Diagnostics</h3>
-        <p>Launched our advanced diagnostic and imaging center with modern technology.</p>
+        <span class="timeline-year"><?php echo e(content('about', 'milestone_3_year')); ?></span>
+        <h3><?php echo e(content('about', 'milestone_3_title')); ?></h3>
+        <p><?php echo e(content('about', 'milestone_3_desc')); ?></p>
       </div>
       <div class="timeline-item" data-aos="fade-up" data-aos-duration="900">
-        <span class="timeline-year">2026</span>
-        <h3>300+ Beds &amp; Growing</h3>
-        <p>Now serving thousands of patients every year with 300+ beds and expert teams.</p>
+        <span class="timeline-year"><?php echo e(content('about', 'milestone_4_year')); ?></span>
+        <h3><?php echo e(content('about', 'milestone_4_title')); ?></h3>
+        <p><?php echo e(content('about', 'milestone_4_desc')); ?></p>
       </div>
     </div>
   </div>

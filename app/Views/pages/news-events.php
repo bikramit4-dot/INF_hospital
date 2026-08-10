@@ -1,6 +1,6 @@
 <section class="page-banner">
   <div class="container">
-    <h1>News and Events</h1>
+    <h1><?php echo e(content('news-events', 'banner_title')); ?></h1>
     <div class="breadcrumb"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / News and Events</div>
   </div>
 </section>
@@ -8,9 +8,9 @@
 <section class="section">
   <div class="container">
     <div class="section-title">
-      <span>Stay Updated</span>
-      <h2>Latest News & Upcoming Events</h2>
-      <p>Hospital news, health campaigns, medical seminars, and community programs.</p>
+      <span><?php echo e(content('news-events', 'news_kicker')); ?></span>
+      <h2><?php echo e(content('news-events', 'news_title')); ?></h2>
+      <p><?php echo e(content('news-events', 'news_text')); ?></p>
     </div>
     <div class="grid grid-3">
       <?php foreach ($news_events as $item): ?>

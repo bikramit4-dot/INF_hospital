@@ -1,6 +1,6 @@
 <section class="page-banner">
   <div class="container">
-    <h1>Patient Care & Safety</h1>
+    <h1><?php echo e(content('patient-care-safety', 'banner_title')); ?></h1>
     <div class="breadcrumb"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / Patient Care & Safety</div>
   </div>
 </section>
@@ -8,9 +8,9 @@
 <section class="section">
   <div class="container">
     <div class="section-title">
-      <span>Safety First</span>
-      <h2>Our Commitment to Your Safety</h2>
-      <p>Patient safety is our highest priority. We follow international standards to ensure a safe and healing environment.</p>
+      <span><?php echo e(content('patient-care-safety', 'safety_kicker')); ?></span>
+      <h2><?php echo e(content('patient-care-safety', 'safety_title')); ?></h2>
+      <p><?php echo e(content('patient-care-safety', 'safety_text')); ?></p>
     </div>
     <div class="grid grid-3">
       <div class="card">

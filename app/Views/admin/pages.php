@@ -25,7 +25,7 @@
       <span class="editor-emoji"><?php echo e($content_pages[$current]['icon']); ?></span>
       <div>
         <h2><?php echo e($content_pages[$current]['label']); ?></h2>
-        <p><?php echo $field_count; ?> editable field<?php echo $field_count === 1 ? '' : 's'; ?> · fields showing <span class="badge badge-active">Default</span> have not been customized yet.</p>
+        <p><?php echo $field_count; ?> editable field<?php echo $field_count === 1 ? '' : 's'; ?> · fields showing <span class="badge badge-active">Default</span> use the site default · leave a field blank to show its default.</p>
       </div>
     </div>
     <a href="<?php echo e($content_pages[$current]['url']); ?>" class="btn btn-sm btn-ghost" target="_blank" rel="noopener"><?php echo admin_icon('external'); ?> View this page</a>
@@ -58,6 +58,7 @@
           <?php endif; ?>
           <?php if ($f['hint'] !== ''): ?><p class="form-hint"><?php echo e($f['hint']); ?></p><?php endif; ?>
           <div class="field-actions">
+            <span class="field-blank-hint">Blank = site default</span>
             <button type="submit" name="reset_section" value="<?php echo e($f['section']); ?>" class="btn btn-xs btn-ghost js-reset-confirm" data-confirm="Reset “<?php echo e($f['label']); ?>” to its default value?">Reset to default</button>
           </div>
         </div>

@@ -1,6 +1,6 @@
 <section class="page-banner">
   <div class="container">
-    <h1 data-aos="fade-up" data-aos-duration="1000">Lab Report</h1>
+    <h1 data-aos="fade-up" data-aos-duration="1000"><?php echo e(content('lab-report', 'banner_title')); ?></h1>
     <div class="breadcrumb" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / Lab Report</div>
   </div>
 </section>
@@ -8,9 +8,9 @@
 <section class="section" id="view">
   <div class="container" style="max-width:760px;">
     <div class="section-title" style="max-width:100%;" data-aos="fade-up" data-aos-duration="1000">
-      <span>Report Access</span>
-      <h2>View / Download Your Lab Report</h2>
-      <p>Enter your Report ID and registered phone number to securely access your test results.</p>
+      <span><?php echo e(content('lab-report', 'report_kicker')); ?></span>
+      <h2><?php echo e(content('lab-report', 'report_title')); ?></h2>
+      <p><?php echo e(content('lab-report', 'report_text')); ?></p>
     </div>
 
     <div class="form-box mb-20" data-aos="zoom-in" data-aos-duration="1200">

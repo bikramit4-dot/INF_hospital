@@ -600,9 +600,10 @@
   outline:none;border-color:var(--admin-accent);
   box-shadow:0 0 0 3px rgba(217,35,50,.1);
 }
-.field-actions{margin-top:9px;display:flex;justify-content:flex-end;}
+.field-actions{margin-top:9px;display:flex;align-items:center;justify-content:flex-end;gap:10px;}
 .field-actions .btn{font-size:12px;opacity:.85;}
 .field-actions .btn:hover{opacity:1;color:var(--admin-accent);}
+.field-blank-hint{font-size:11px;color:var(--admin-muted);}
 
 .form-submit-sticky{
   position:sticky;bottom:0;z-index:5;

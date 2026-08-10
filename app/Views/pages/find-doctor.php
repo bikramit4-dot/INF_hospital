@@ -1,6 +1,6 @@
 <section class="page-banner">
   <div class="container">
-    <h1 data-aos="fade-up" data-aos-duration="1000">Find a Doctor</h1>
+    <h1 data-aos="fade-up" data-aos-duration="1000"><?php echo e(content('find-doctor', 'banner_title')); ?></h1>
     <div class="breadcrumb" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / Find a Doctor</div>
   </div>
 </section>

@@ -1,6 +1,6 @@
 <section class="page-banner">
   <div class="container">
-    <h1>Online Consultation</h1>
+    <h1><?php echo e(content('online-consultation', 'banner_title')); ?></h1>
     <div class="breadcrumb"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / Online Consultation</div>
   </div>
 </section>
@@ -8,8 +8,8 @@
 <section class="section">
   <div class="container grid grid-2">
     <div>
-      <h2>Consult a Doctor Online</h2>
-      <p style="color:var(--gray); margin:16px 0;">Can't visit us in person? Request a video or phone consultation with one of our specialists from the comfort of your home. Fill out the form and our team will confirm your appointment time.</p>
+      <h2><?php echo e(content('online-consultation', 'oc_title')); ?></h2>
+      <p style="color:var(--gray); margin:16px 0;"><?php echo e(content('online-consultation', 'oc_text')); ?></p>
       <ul style="color:var(--gray);">
         <li style="margin-bottom:10px;">✔ Secure video consultation</li>
         <li style="margin-bottom:10px;">✔ Prescription sent digitally</li>

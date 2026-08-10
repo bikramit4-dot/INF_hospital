@@ -1,6 +1,6 @@
 <section class="page-banner">
   <div class="container">
-    <h1>Research & Education</h1>
+    <h1><?php echo e(content('research-education', 'banner_title')); ?></h1>
     <div class="breadcrumb"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / Research & Education</div>
   </div>
 </section>
@@ -8,8 +8,8 @@
 <section class="section">
   <div class="container grid grid-2">
     <div>
-      <h2>Medical Research</h2>
-      <p style="color:var(--gray); margin-top:16px;">Our hospital is committed to advancing medical knowledge through clinical research and trials. We collaborate with academic institutions and research organizations to study new treatments, improve patient outcomes, and contribute to the global medical community.</p>
+      <h2><?php echo e(content('research-education', 're_research_title')); ?></h2>
+      <p style="color:var(--gray); margin-top:16px;"><?php echo e(content('research-education', 're_research_text')); ?></p>
       <ul style="margin-top:16px; color:var(--gray);">
         <li style="margin-bottom:10px;">✔ Clinical trials and studies</li>
         <li style="margin-bottom:10px;">✔ Collaborations with universities</li>
@@ -18,8 +18,8 @@
       </ul>
     </div>
     <div>
-      <h2>Medical Education</h2>
-      <p style="color:var(--gray); margin-top:16px;">We are dedicated to training the next generation of healthcare professionals. Our hospital serves as a teaching institution offering residency programs, nursing training, and continuing medical education for practicing doctors.</p>
+      <h2><?php echo e(content('research-education', 're_education_title')); ?></h2>
+      <p style="color:var(--gray); margin-top:16px;"><?php echo e(content('research-education', 're_education_text')); ?></p>
       <ul style="margin-top:16px; color:var(--gray);">
         <li style="margin-bottom:10px;">✔ Residency and fellowship programs</li>
         <li style="margin-bottom:10px;">✔ Nursing and allied health training</li>
@@ -33,8 +33,8 @@
 <section class="section section-alt">
   <div class="container">
     <div class="section-title">
-      <span>Learn More</span>
-      <h2>Educational Resources</h2>
+      <span><?php echo e(content('research-education', 're_kicker')); ?></span>
+      <h2><?php echo e(content('research-education', 're_resources_title')); ?></h2>
     </div>
     <div class="grid grid-3">
       <div class="card"><h3>📚 Health Library</h3><p>Access our comprehensive health library with articles on diseases, treatments, and wellness.</p></div>

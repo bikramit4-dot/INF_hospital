@@ -1,6 +1,6 @@
 <section class="page-banner">
   <div class="container">
-    <h1>Careers</h1>
+    <h1><?php echo e(content('careers', 'banner_title')); ?></h1>
     <div class="breadcrumb"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / Careers</div>
   </div>
 </section>
@@ -8,9 +8,9 @@
 <section class="section">
   <div class="container">
     <div class="section-title">
-      <span>Join Our Team</span>
-      <h2>Current Openings</h2>
-      <p>Build a rewarding career with us. Explore our current job openings below.</p>
+      <span><?php echo e(content('careers', 'careers_kicker')); ?></span>
+      <h2><?php echo e(content('careers', 'careers_title')); ?></h2>
+      <p><?php echo e(content('careers', 'careers_text')); ?></p>
     </div>
     <div class="table-scroll">
       <table>

@@ -1,6 +1,6 @@
 <section class="page-banner">
   <div class="container">
-    <h1>Doctor Schedule</h1>
+    <h1><?php echo e(content('doctor-schedule', 'banner_title')); ?></h1>
     <div class="breadcrumb"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / Doctor Schedule</div>
   </div>
 </section>
@@ -8,9 +8,9 @@
 <section class="section">
   <div class="container">
     <div class="section-title">
-      <span>Availability</span>
-      <h2>Weekly Doctor Schedule</h2>
-      <p>Check availability before booking your appointment.</p>
+      <span><?php echo e(content('doctor-schedule', 'ds_kicker')); ?></span>
+      <h2><?php echo e(content('doctor-schedule', 'ds_title')); ?></h2>
+      <p><?php echo e(content('doctor-schedule', 'ds_text')); ?></p>
     </div>
     <div class="table-scroll">
       <table>
