@@ -214,6 +214,18 @@ CREATE TABLE IF NOT EXISTS lab_report_results (
 );
 
 -- --------------------------------------------------
+-- Editable Page Content (managed via admin panel -> Pages)
+-- --------------------------------------------------
+CREATE TABLE IF NOT EXISTS page_content (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    page TEXT NOT NULL,
+    section TEXT NOT NULL,
+    content TEXT,
+    updated_at TEXT NOT NULL DEFAULT (datetime('now')),
+    UNIQUE (page, section)
+);
+
+-- --------------------------------------------------
 -- Login Attempts (for brute-force protection)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS login_attempts (

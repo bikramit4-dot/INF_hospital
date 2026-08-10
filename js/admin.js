@@ -34,6 +34,14 @@
     });
   });
 
+  // ---- Confirmation for per-field "Reset to default" buttons ----
+  document.querySelectorAll('button.js-reset-confirm').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      var msg = btn.getAttribute('data-confirm') || 'Reset this field to its default value?';
+      if (!window.confirm(msg)) e.preventDefault();
+    });
+  });
+
   // ---- Auto-dismiss success/error alerts after a few seconds ----
   document.querySelectorAll('.alert-dismissible').forEach(function (el) {
     setTimeout(function () {

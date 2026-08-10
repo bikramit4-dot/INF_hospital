@@ -6,10 +6,9 @@
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="container hero-inner">
     <h1 data-aos="fade-up" data-aos-duration="1000">
-      <span class="hero-title">Welcome to International Nepal Fellowship (Nepal)</span>
-      
+      <span class="hero-title"><?php echo e(content('home', 'hero_title')); ?></span>
     </h1>
-    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">Home Hospital is committed to providing world-class healthcare with modern technology, expert specialists and patient-centered service, 24 hours a day.</p>
+    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150"><?php echo e(content('home', 'hero_subtitle')); ?></p>
     <div class="hero-buttons">
       <a href="<?php echo e(site_url('pages/book-appointment.php')); ?>" class="btn btn-primary" data-aos="zoom-in" data-aos-duration="1200">Book Appointment</a>
       <a href="<?php echo e(site_url('pages/services.php#emergency')); ?>" class="btn btn-outline" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="100">Emergency Services</a>
@@ -19,19 +18,19 @@
 
 <section class="stats">
   <div class="container grid grid-4">
-    <div data-aos="fade-up" data-aos-duration="1000"><h3>25+</h3><span>Years of Service</span></div>
-    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><h3>150+</h3><span>Expert Doctors</span></div>
-    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><h3>300+</h3><span>Hospital Beds</span></div>
-    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><h3>24/7</h3><span>Emergency Care</span></div>
+    <div data-aos="fade-up" data-aos-duration="1000"><h3><?php echo e(content('home', 'stat_1_value')); ?></h3><span><?php echo e(content('home', 'stat_1_label')); ?></span></div>
+    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><h3><?php echo e(content('home', 'stat_2_value')); ?></h3><span><?php echo e(content('home', 'stat_2_label')); ?></span></div>
+    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><h3><?php echo e(content('home', 'stat_3_value')); ?></h3><span><?php echo e(content('home', 'stat_3_label')); ?></span></div>
+    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><h3><?php echo e(content('home', 'stat_4_value')); ?></h3><span><?php echo e(content('home', 'stat_4_label')); ?></span></div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
     <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
-      <span>What We Offer</span>
-      <h2>Our Core Services</h2>
-      <p>From emergency care to specialized treatment, we offer a full spectrum of medical services under one roof.</p>
+      <span><?php echo e(content('home', 'services_kicker')); ?></span>
+      <h2><?php echo e(content('home', 'services_title')); ?></h2>
+      <p><?php echo e(content('home', 'services_text')); ?></p>
     </div>
     <?php if (!empty($services)): ?>
     <div class="services-carousel" data-carousel>
@@ -61,16 +60,16 @@
       <button class="carousel-btn carousel-btn-next" type="button" data-carousel-next aria-label="Next services">&#8250;</button>
     </div>
     <?php endif; ?>
-    <p class="text-center mt-20"><a href="<?php echo e(site_url('pages/services.php')); ?>" class="btn btn-secondary btn-view-all" data-aos="zoom-in" data-aos-duration="1200">View All Services</a></p>
+    <p class="text-center mt-20"><a href="<?php echo e(site_url('pages/services.php')); ?>" class="btn btn-secondary btn-view-all" data-aos="zoom-in" data-aos-duration="1200"><?php echo e(content('home', 'services_view_all')); ?></a></p>
   </div>
 </section>
 
 <section class="section section-alt">
   <div class="container">
     <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
-      <span>Our Specialists</span>
-      <h2>Meet Our Doctors</h2>
-      <p>Experienced, board-certified specialists dedicated to your health and wellbeing.</p>
+      <span><?php echo e(content('home', 'doctors_kicker')); ?></span>
+      <h2><?php echo e(content('home', 'doctors_title')); ?></h2>
+      <p><?php echo e(content('home', 'doctors_text')); ?></p>
     </div>
     <?php if (!empty($doctors)): ?>
     <div class="doctors-carousel" data-carousel>
@@ -100,16 +99,16 @@
       <button class="carousel-btn carousel-btn-next" type="button" data-carousel-next aria-label="Next doctors">&#8250;</button>
     </div>
     <?php endif; ?>
-    <p class="text-center mt-20"><a href="<?php echo e(site_url('pages/find-doctor.php')); ?>" class="btn btn-secondary" data-aos="zoom-in" data-aos-duration="1200">Find a Doctor</a></p>
+    <p class="text-center mt-20"><a href="<?php echo e(site_url('pages/find-doctor.php')); ?>" class="btn btn-secondary" data-aos="zoom-in" data-aos-duration="1200"><?php echo e(content('home', 'doctors_find')); ?></a></p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
     <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
-      <span>Health Packages</span>
-      <h2>Preventive Health Checkups</h2>
-      <p>Affordable health packages designed for early detection and prevention.</p>
+      <span><?php echo e(content('home', 'packages_kicker')); ?></span>
+      <h2><?php echo e(content('home', 'packages_title')); ?></h2>
+      <p><?php echo e(content('home', 'packages_text')); ?></p>
     </div>
     <div class="grid grid-3">
       <?php foreach (array_slice($health_packages, 0, 3) as $i => $pkg): ?>
@@ -120,14 +119,14 @@
       </div>
       <?php endforeach; ?>
     </div>
-    <p class="text-center mt-20"><a href="<?php echo e(site_url('pages/health-packages.php')); ?>" class="btn btn-secondary" data-aos="zoom-in" data-aos-duration="1200">View All Packages</a></p>
+    <p class="text-center mt-20"><a href="<?php echo e(site_url('pages/health-packages.php')); ?>" class="btn btn-secondary" data-aos="zoom-in" data-aos-duration="1200"><?php echo e(content('home', 'packages_view_all')); ?></a></p>
   </div>
 </section>
 
 <section class="cta">
   <div class="container">
-    <h2 data-aos="zoom-in" data-aos-duration="1200">Need Medical Assistance?</h2>
-    <p data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="100">Our team is available 24/7. Book an appointment online or call our emergency line.</p>
-    <a href="<?php echo e(site_url('pages/book-appointment.php')); ?>" class="btn" style="background:#fff;color:var(--accent);" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">Book an Appointment</a>
+    <h2 data-aos="zoom-in" data-aos-duration="1200"><?php echo e(content('home', 'cta_title')); ?></h2>
+    <p data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="100"><?php echo e(content('home', 'cta_text')); ?></p>
+    <a href="<?php echo e(site_url('pages/book-appointment.php')); ?>" class="btn" style="background:#fff;color:var(--accent);" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200"><?php echo e(content('home', 'cta_btn')); ?></a>
   </div>
 </section>

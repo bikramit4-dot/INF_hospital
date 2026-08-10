@@ -271,6 +271,19 @@ CREATE TABLE IF NOT EXISTS login_attempts (
     KEY idx_login_attempts_attempted_at (attempted_at)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- --------------------------------------------------
+-- Editable Page Content (managed via admin panel -> Pages)
+-- --------------------------------------------------
+CREATE TABLE IF NOT EXISTS page_content (
+    id INT NOT NULL AUTO_INCREMENT,
+    page VARCHAR(60) NOT NULL,
+    section VARCHAR(60) NOT NULL,
+    content TEXT,
+    updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    UNIQUE KEY uq_page_content_page_section (page, section)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- ============================================================
 -- SEED DATA
 -- ============================================================

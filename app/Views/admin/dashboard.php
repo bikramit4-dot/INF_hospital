@@ -104,6 +104,7 @@ $stats_meta = [
       <a class="quick-link" href="team-members.php"><span class="ql-icon"><?php echo admin_icon('users'); ?></span>Add Team Member</a>
       <a class="quick-link" href="lab-reports.php"><span class="ql-icon"><?php echo admin_icon('file'); ?></span>Add Lab Report</a>
       <a class="quick-link" href="news.php"><span class="ql-icon"><?php echo admin_icon('newspaper'); ?></span>Add News</a>
+      <a class="quick-link" href="pages.php"><span class="ql-icon"><?php echo admin_icon('layout'); ?></span>Edit Page Content</a>
       <a class="quick-link" href="appointments.php"><span class="ql-icon"><?php echo admin_icon('calendar'); ?></span>Review Appointments</a>
       <a class="quick-link" href="contacts.php"><span class="ql-icon"><?php echo admin_icon('mail'); ?></span>Read Messages</a>
     </div>

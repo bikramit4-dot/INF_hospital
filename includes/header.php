@@ -23,13 +23,13 @@ function header_nav_active(string $link, string $current): string
 <div class="topbar">
   <div class="container topbar-inner">
     <div class="topbar-left">
-      <span>📍 <?php echo e(SITE_ADDRESS); ?></span>
-      <span class="topbar-hide-sm">✉️ <a href="mailto:<?php echo e(SITE_EMAIL); ?>"><?php echo e(SITE_EMAIL); ?></a></span>
-      <span class="topbar-hide-sm">📞 <a href="tel:<?php echo e(SITE_PHONE); ?>"><?php echo e(SITE_PHONE); ?></a></span>
+      <span>📍 <?php echo e(content('global', 'address')); ?></span>
+      <span class="topbar-hide-sm">✉️ <a href="mailto:<?php echo e(content('global', 'email')); ?>"><?php echo e(content('global', 'email')); ?></a></span>
+      <span class="topbar-hide-sm">📞 <a href="tel:<?php echo e(content('global', 'phone')); ?>"><?php echo e(content('global', 'phone')); ?></a></span>
     </div>
     <div class="topbar-right">
-      <span class="topbar-hide-sm">🕐 Open 24 Hours · 7 Days</span>
-      <span class="emergency">🚑 Emergency: <?php echo e(SITE_EMERGENCY); ?></span>
+      <span class="topbar-hide-sm">🕐 <?php echo e(content('global', 'topbar_hours')); ?></span>
+      <span class="emergency">🚑 Emergency: <?php echo e(content('global', 'emergency')); ?></span>
     </div>
   </div>
 </div>
@@ -42,11 +42,11 @@ function header_nav_active(string $link, string $current): string
     </a>
 
     <div class="header-actions">
-      <a href="tel:<?php echo e(SITE_EMERGENCY); ?>" class="header-call">
+      <a href="tel:<?php echo e(content('global', 'emergency')); ?>" class="header-call">
         <span class="header-call-icon">📞</span>
         <span class="header-call-text">
           <small>Call Us 24/7</small>
-          <?php echo e(SITE_EMERGENCY); ?>
+          <?php echo e(content('global', 'emergency')); ?>
         </span>
       </a>
       <a href="<?php echo e(site_url('pages/book-appointment.php')); ?>" class="btn btn-primary nav-cta">Book Appointment</a>

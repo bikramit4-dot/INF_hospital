@@ -1,6 +1,6 @@
 <section class="page-banner">
   <div class="container">
-    <h1 data-aos="fade-up" data-aos-duration="1000">Our Services</h1>
+    <h1 data-aos="fade-up" data-aos-duration="1000"><?php echo e(content('services', 'banner_title')); ?></h1>
     <div class="breadcrumb" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / Our Services</div>
   </div>
 </section>
@@ -23,8 +23,8 @@
 
 <section class="cta">
   <div class="container">
-    <h2 data-aos="zoom-in" data-aos-duration="1200">Need to Schedule a Visit?</h2>
-    <p data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="100">Book an appointment with the right department in just a few clicks.</p>
-    <a href="<?php echo e(site_url('pages/book-appointment.php')); ?>" class="btn" style="background:#fff;color:var(--accent);" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">Book an Appointment</a>
+    <h2 data-aos="zoom-in" data-aos-duration="1200"><?php echo e(content('services', 'cta_title')); ?></h2>
+    <p data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="100"><?php echo e(content('services', 'cta_text')); ?></p>
+    <a href="<?php echo e(site_url('pages/book-appointment.php')); ?>" class="btn" style="background:#fff;color:var(--accent);" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200"><?php echo e(content('services', 'cta_btn')); ?></a>
   </div>
 </section>

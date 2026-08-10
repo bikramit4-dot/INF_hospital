@@ -2,7 +2,7 @@
   <div class="container footer-grid">
     <div class="footer-col">
       <h3><?php echo SITE_NAME; ?></h3>
-      <p><?php echo SITE_TAGLINE; ?>. Providing quality, compassionate healthcare to our community with modern medical technology and dedicated specialists.</p>
+      <p><?php echo e(content('global', 'footer_text')); ?></p>
     </div>
     <div class="footer-col">
       <h4>Quick Links</h4>
@@ -27,10 +27,10 @@
     <div class="footer-col">
       <h4>Contact Info</h4>
       <ul class="contact-list">
-        <li>📍 <?php echo SITE_ADDRESS; ?></li>
-        <li>📞 <?php echo SITE_PHONE; ?></li>
-        <li>🚑 <?php echo SITE_EMERGENCY; ?></li>
-        <li>✉️ <?php echo SITE_EMAIL; ?></li>
+        <li>📍 <?php echo e(content('global', 'address')); ?></li>
+        <li>📞 <?php echo e(content('global', 'phone')); ?></li>
+        <li>🚑 <?php echo e(content('global', 'emergency')); ?></li>
+        <li>✉️ <?php echo e(content('global', 'email')); ?></li>
       </ul>
     </div>
   </div>

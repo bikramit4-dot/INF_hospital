@@ -41,7 +41,7 @@ echo "Database '{$db}' ready.\n";
 $tables = [
     'lab_report_results', 'lab_reports', 'career_applications', 'online_consultations',
     'contacts', 'appointments', 'patients', 'team_members', 'services',
-    'news_events', 'health_packages', 'doctors', 'departments', 'login_attempts', 'admins',
+    'news_events', 'health_packages', 'doctors', 'departments', 'login_attempts', 'page_content', 'admins',
 ];
 $pdo->exec('SET FOREIGN_KEY_CHECKS = 0');
 foreach ($tables as $t) {

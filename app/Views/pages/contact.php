@@ -8,19 +8,19 @@
 <section class="section">
   <div class="container grid grid-2">
     <div>
-      <h2>Get in Touch</h2>
-      <p style="color:var(--gray); margin:16px 0 24px;">Have a question or need assistance? Reach out to us using the form, or contact us directly using the information below.</p>
+      <h2><?php echo e(content('contact', 'intro_title')); ?></h2>
+      <p style="color:var(--gray); margin:16px 0 24px;"><?php echo e(content('contact', 'intro_text')); ?></p>
       <div class="card mb-20">
-        <p>📍 <strong>Address:</strong> <?php echo SITE_ADDRESS; ?></p>
+        <p>📍 <strong>Address:</strong> <?php echo e(content('global', 'address')); ?></p>
       </div>
       <div class="card mb-20">
-        <p>📞 <strong>Phone:</strong> <?php echo SITE_PHONE; ?></p>
+        <p>📞 <strong>Phone:</strong> <?php echo e(content('global', 'phone')); ?></p>
       </div>
       <div class="card mb-20">
-        <p>🚑 <strong>Emergency:</strong> <?php echo SITE_EMERGENCY; ?></p>
+        <p>🚑 <strong>Emergency:</strong> <?php echo e(content('global', 'emergency')); ?></p>
       </div>
       <div class="card">
-        <p>✉️ <strong>Email:</strong> <?php echo SITE_EMAIL; ?></p>
+        <p>✉️ <strong>Email:</strong> <?php echo e(content('global', 'email')); ?></p>
       </div>
     </div>
     <div class="form-box">
@@ -57,8 +57,8 @@
 <section class="section section-alt">
   <div class="container">
     <div class="section-title">
-      <span>Find Us</span>
-      <h2>Our Location</h2>
+      <span><?php echo e(content('contact', 'map_kicker')); ?></span>
+      <h2><?php echo e(content('contact', 'map_title')); ?></h2>
     </div>
     <div style="border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);">
       <iframe src="https://www.google.com/maps?q=Pokhara,Nepal&output=embed" width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy"></iframe>

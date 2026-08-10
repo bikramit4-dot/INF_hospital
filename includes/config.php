@@ -110,6 +110,43 @@ function e($value) {
     return htmlspecialchars((string)$value, ENT_QUOTES, 'UTF-8');
 }
 
+// ----------------------------------------------------------
+// Editable page content
+// Values are stored in the page_content table (admin panel -> Pages)
+// and fall back to the defaults defined in includes/page-content-registry.php
+// when no custom value has been saved. Results are cached per request.
+// ----------------------------------------------------------
+function content(string $page, string $section, ?string $default = null): string
+{
+    static $cache = [];
+    static $registry = null;
+    $key = $page . "\x1F" . $section;
+    if (array_key_exists($key, $cache)) {
+        return $cache[$key];
+    }
+    $value = \App\Models\PageContent::get($page, $section);
+    if ($value === '') {
+        if ($default === null) {
+            if ($registry === null) {
+                $registry = require __DIR__ . '/page-content-registry.php';
+            }
+            $default = $registry['defaults'][$key] ?? '';
+        }
+        $value = (string) $default;
+    }
+    $cache[$key] = $value;
+    return $value;
+}
+
+// Same as content(), but splits the value into trimmed, non-empty lines
+// (handy for bullet lists stored one-per-line).
+function content_lines(string $page, string $section, ?string $default = null): array
+{
+    $lines = preg_split('/\r?\n/', content($page, $section, $default));
+    $lines = array_map('trim', $lines);
+    return array_values(array_filter($lines, fn($l) => $l !== ''));
+}
+
 // Build a site-root-relative URL for asset paths stored in the database
 // (e.g. "images/services/emergency.jpg"). Works from any page, including
 // the /admin/ folder, and returns absolute URLs unchanged.

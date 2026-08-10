@@ -1,9 +1,9 @@
 <!-- Page banner -->
 <section class="page-banner page-banner-image">
   <div class="container">
-    <div class="breadcrumb" data-aos="fade-up" data-aos-duration="800"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / About Us</div>
-    <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">About Us</h1>
-    <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">Compassionate care and advanced medicine — proudly serving our community for over 25 years.</p>
+    <div class="breadcrumb" data-aos="fade-up" data-aos-duration="800"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / <?php echo e(content('about', 'banner_title')); ?></div>
+    <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="100"><?php echo e(content('about', 'banner_title')); ?></h1>
+    <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="200"><?php echo e(content('about', 'banner_subtitle')); ?></p>
   </div>
 </section>
 
@@ -20,14 +20,14 @@
     </div>
 
     <div class="about-copy" data-aos="fade-left" data-aos-duration="1000">
-      <span class="section-kicker">Who We Are</span>
-      <h2>Healthcare That Puts People First</h2>
-      <p><?php echo e(SITE_NAME); ?> has been serving the community for over 25 years, growing from a small clinic into a full-service, multi-specialty hospital. We combine modern medical technology with a compassionate, patient-first approach to deliver the highest standard of care.</p>
-      <p>Our multidisciplinary team of doctors, nurses, and healthcare professionals work together to ensure every patient receives accurate diagnosis, effective treatment, and continuous support throughout their care journey.</p>
+      <span class="section-kicker"><?php echo e(content('about', 'who_kicker')); ?></span>
+      <h2><?php echo e(content('about', 'who_title')); ?></h2>
+      <p><?php echo e(content('about', 'who_p1')); ?></p>
+      <p><?php echo e(content('about', 'who_p2')); ?></p>
       <ul class="about-features">
-        <li><span class="feature-check">✔</span> Full multi-specialty care under one roof</li>
-        <li><span class="feature-check">✔</span> Patient-first approach at every step</li>
-        <li><span class="feature-check">✔</span> Modern technology, compassionate hands</li>
+        <li><span class="feature-check">✔</span> <?php echo e(content('about', 'who_feature_1')); ?></li>
+        <li><span class="feature-check">✔</span> <?php echo e(content('about', 'who_feature_2')); ?></li>
+        <li><span class="feature-check">✔</span> <?php echo e(content('about', 'who_feature_3')); ?></li>
       </ul>
       <div class="about-actions">
         <a href="<?php echo e(site_url('pages/book-appointment.php')); ?>" class="btn btn-secondary">Book an Appointment</a>
@@ -41,40 +41,40 @@
 <section class="section section-alt">
   <div class="container">
     <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
-      <span>Why Choose Us</span>
-      <h2>The <?php echo e(SITE_NAME); ?> Difference</h2>
-      <p>Everything we do is designed around one goal — your health, comfort, and peace of mind.</p>
+      <span><?php echo e(content('about', 'why_kicker')); ?></span>
+      <h2><?php echo e(content('about', 'why_title')); ?></h2>
+      <p><?php echo e(content('about', 'why_text')); ?></p>
     </div>
     <div class="grid grid-3">
       <div class="card feature-card" data-aos="fade-up" data-aos-duration="1000">
         <div class="icon">👨‍⚕️</div>
-        <h3>Expert Specialists</h3>
-        <p>150+ experienced, board-certified doctors across every major specialty.</p>
+        <h3><?php echo e(content('about', 'why_1_title')); ?></h3>
+        <p><?php echo e(content('about', 'why_1_desc')); ?></p>
       </div>
       <div class="card feature-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
         <div class="icon">🚑</div>
-        <h3>24/7 Emergency Care</h3>
-        <p>Round-the-clock emergency and trauma care with rapid response teams.</p>
+        <h3><?php echo e(content('about', 'why_2_title')); ?></h3>
+        <p><?php echo e(content('about', 'why_2_desc')); ?></p>
       </div>
       <div class="card feature-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
         <div class="icon">🔬</div>
-        <h3>Advanced Diagnostics</h3>
-        <p>State-of-the-art imaging and laboratory services for accurate, fast results.</p>
+        <h3><?php echo e(content('about', 'why_3_title')); ?></h3>
+        <p><?php echo e(content('about', 'why_3_desc')); ?></p>
       </div>
       <div class="card feature-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
         <div class="icon">🏥</div>
-        <h3>Accredited Safety</h3>
-        <p>Internationally recognized patient safety standards and infection control.</p>
+        <h3><?php echo e(content('about', 'why_4_title')); ?></h3>
+        <p><?php echo e(content('about', 'why_4_desc')); ?></p>
       </div>
       <div class="card feature-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
         <div class="icon">🌍</div>
-        <h3>International Patients</h3>
-        <p>Dedicated services including visa assistance, interpreters, and travel support.</p>
+        <h3><?php echo e(content('about', 'why_5_title')); ?></h3>
+        <p><?php echo e(content('about', 'why_5_desc')); ?></p>
       </div>
       <div class="card feature-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
         <div class="icon">❤️</div>
-        <h3>Compassionate Care</h3>
-        <p>A warm, human approach that treats every patient like family.</p>
+        <h3><?php echo e(content('about', 'why_6_title')); ?></h3>
+        <p><?php echo e(content('about', 'why_6_desc')); ?></p>
       </div>
     </div>
   </div>
@@ -116,8 +116,8 @@
 <!-- CTA -->
 <section class="cta cta-about">
   <div class="container">
-    <h2 data-aos="zoom-in" data-aos-duration="1200">Ready to Experience Better Care?</h2>
-    <p data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="100">Our team is available 24/7. Book an appointment online or call our emergency line.</p>
-    <a href="<?php echo e(site_url('pages/book-appointment.php')); ?>" class="btn" style="background:#fff;color:var(--accent);" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">Book an Appointment</a>
+    <h2 data-aos="zoom-in" data-aos-duration="1200"><?php echo e(content('about', 'cta_title')); ?></h2>
+    <p data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="100"><?php echo e(content('about', 'cta_text')); ?></p>
+    <a href="<?php echo e(site_url('pages/book-appointment.php')); ?>" class="btn" style="background:#fff;color:var(--accent);" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200"><?php echo e(content('about', 'cta_btn')); ?></a>
   </div>
 </section>
