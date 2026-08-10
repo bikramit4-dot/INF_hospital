@@ -1,7 +1,7 @@
 <section class="page-banner">
   <div class="container">
     <h1><?php echo e(content('doctor-schedule', 'banner_title')); ?></h1>
-    <div class="breadcrumb"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / Doctor Schedule</div>
+    <div class="breadcrumb"><a href="<?php echo e(site_url('pages/index.php')); ?>">Home</a> / <?php echo e(content('doctor-schedule', 'banner_title')); ?></div>
   </div>
 </section>
 

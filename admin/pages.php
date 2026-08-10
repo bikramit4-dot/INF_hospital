@@ -45,16 +45,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             PageContent::upsert($target, $reset_section, '');
             $message = '<div class="alert alert-success alert-dismissible">Field reset to its default value.</div>';
         } else {
-            // Save every field of the current page.
+            // Save every field of the current page, skipping unchanged values
+            // so the table only grows when content actually changes.
+            $stored = PageContent::allForPage($target);
             $saved = 0;
             foreach ($content_pages[$target]['groups'] as $fields) {
                 foreach ($fields as $f) {
                     $section = $f['section'];
                     $value = trim((string) ($_POST['c_' . $section] ?? ''));
-                    PageContent::upsert($target, $section, $value);
-                    $saved++;
+                    if ($value !== ($stored[$section] ?? '')) {
+                        PageContent::upsert($target, $section, $value);
+                        $saved++;
+                    }
                 }
             }
+            PageContent::pruneEmpty($target);
             $message = '<div class="alert alert-success alert-dismissible">' . $saved . ' field(s) saved. Changes are live on the website.</div>';
         }
     } catch (Exception $e) {

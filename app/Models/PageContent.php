@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 
+use App\Core\Database;
 use App\Core\Model;
 
 /**
@@ -13,23 +14,6 @@ use App\Core\Model;
 class PageContent extends Model
 {
     protected static string $table = 'page_content';
-
-    /**
-     * Return the stored content for a page/section ('' when unset/empty).
-     */
-    public static function get(string $page, string $section): string
-    {
-        $row = static::firstWhere('page = :p AND section = :s', [':p' => $page, ':s' => $section]);
-        return $row ? (string) $row['content'] : '';
-    }
-
-    /**
-     * Whether the page/section has custom (non-empty) content stored.
-     */
-    public static function has(string $page, string $section): bool
-    {
-        return static::get($page, $section) !== '';
-    }
 
     /**
      * Fetch all custom (non-empty) content for a page in a single query,
@@ -58,6 +42,19 @@ class PageContent extends Model
             $out[$row['section']] = (string) $row['content'];
         }
         return $out;
+    }
+
+    /**
+     * Delete rows for a page that are empty — keeps the table tidy after
+     * saves that blank out previously customized fields (empty = default).
+     */
+    public static function pruneEmpty(string $page): void
+    {
+        $db = Database::getInstance();
+        $db->execute(
+            'DELETE FROM ' . static::$table . ' WHERE page = :p AND (content IS NULL OR content = \'\')',
+            [':p' => $page]
+        );
     }
 
     /**
