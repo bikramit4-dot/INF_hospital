@@ -109,12 +109,12 @@
 .admin-content{width:min(1200px,calc(100% - 2.5rem));margin:0 auto;padding:1.8rem 0 3.2rem;}
 
 /* ============ Page head ============ */
-.page-head,.admin-head{
+.admin-body .page-head,.admin-body .admin-head{
   display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;
   margin-bottom:1.5rem;flex-wrap:wrap;
 }
-.page-head h1,.admin-head h1{font-size:clamp(1.6rem,3vw,2.15rem);margin:0;}
-.page-head p,.admin-head-note{color:var(--muted);margin:.25rem 0 0;max-width:560px;font-size:.95rem;}
+.admin-body .page-head h1,.admin-body .admin-head h1{font-size:clamp(1.6rem,3vw,2.15rem);margin:0;}
+.admin-body .page-head p,.admin-body .admin-head-note{color:var(--muted);margin:.25rem 0 0;max-width:560px;font-size:.95rem;}
 .kicker{
   display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.14em;
   text-transform:uppercase;color:var(--green-600);margin-bottom:.35rem;
@@ -176,7 +176,7 @@
 .info-value{font-weight:600;color:var(--ink);}
 
 /* ============ Forms ============ */
-.form-group{margin-bottom:1rem;min-width:0;}
+.admin-body .form-group{margin-bottom:1rem;min-width:0;}
 .form-group label{display:block;font-size:.84rem;font-weight:600;color:var(--ink);margin-bottom:.35rem;}
 .form-group label .req{color:var(--apricot-600);}
 .admin-body .form-group input[type="text"],
@@ -239,18 +239,18 @@
 .page-ellipsis{color:var(--muted);padding:0 .2rem;}
 
 /* ============ Badges ============ */
-.badge{
+.admin-body .badge{
   display:inline-flex;align-items:center;gap:.4rem;
   font-size:.72rem;font-weight:700;padding:.24rem .65rem;border-radius:999px;
   border:1px solid transparent;line-height:1.4;white-space:nowrap;
 }
-.badge-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none;}
-.badge-pending,.badge-new,.badge-unread{background:var(--apricot-100);color:var(--apricot-600);}
-.badge-confirmed,.badge-reviewed,.badge-read,.badge-success,.badge-active{background:#e4f2ea;color:var(--green-600);}
-.badge-completed{background:var(--sage-100);color:var(--forest-700);}
-.badge-cancelled,.badge-inactive,.badge-rejected{background:#f2ede4;color:#8a6d3b;}
-.badge-default{background:var(--sand);color:var(--muted);}
-.badge-neutral{background:var(--sand);color:var(--muted);}
+.admin-body .badge-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none;}
+.admin-body .badge-pending,.admin-body .badge-new,.admin-body .badge-unread{background:var(--apricot-100);color:var(--apricot-600);}
+.admin-body .badge-confirmed,.admin-body .badge-reviewed,.admin-body .badge-read,.admin-body .badge-success,.admin-body .badge-active{background:#e4f2ea;color:var(--green-600);}
+.admin-body .badge-completed{background:var(--sage-100);color:var(--forest-700);}
+.admin-body .badge-cancelled,.admin-body .badge-inactive,.admin-body .badge-rejected{background:#f2ede4;color:#8a6d3b;}
+.admin-body .badge-default{background:var(--sand);color:var(--muted);}
+.admin-body .badge-neutral{background:var(--sand);color:var(--muted);}
 
 /* ============ Empty state ============ */
 .empty-state{
@@ -511,7 +511,7 @@
   .admin-topbar-actions{gap:.7rem;flex-wrap:wrap;}
   .admin-topbar .brand .brand-text strong{font-size:.95rem;}
   .admin-user{display:none;}
-  .page-head h1,.admin-head h1{font-size:1.45rem;}
+  .admin-body .page-head h1,.admin-body .admin-head h1{font-size:1.45rem;}
   .dash-hero{padding:1.5rem 1.3rem;}
   .admin-stats{grid-template-columns:repeat(2,1fr);}
 }

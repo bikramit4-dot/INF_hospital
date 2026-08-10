@@ -3,6 +3,8 @@ $admin_name = e($_SESSION['admin_user'] ?? 'Admin');
 $today_label = date('l, F j, Y');
 $pending = (int) $stats['appointments'];
 $unread = (int) $stats['contacts'];
+$content_registry = require dirname(__DIR__, 3) . '/includes/page-content-registry.php';
+$pages_count = count($content_registry['pages']);
 
 $overview_stats = [
     ['label' => 'Departments', 'value' => $stats['departments'], 'href' => 'departments.php', 'icon' => 'building', 'tint' => 'stat-total'],
@@ -33,7 +35,7 @@ $manage_cards = [
     ['label' => 'Team Members', 'href' => 'team-members.php', 'icon' => 'users', 'count' => $stats['team']],
     ['label' => 'Lab Reports', 'href' => 'lab-reports.php', 'icon' => 'file', 'count' => $stats['lab_reports']],
     ['label' => 'News & Events', 'href' => 'news.php', 'icon' => 'newspaper', 'count' => $stats['news']],
-    ['label' => 'Website Pages', 'href' => 'pages.php', 'icon' => 'layout', 'count' => 20],
+    ['label' => 'Website Pages', 'href' => 'pages.php', 'icon' => 'layout', 'count' => $pages_count],
 ];
 ?>
 <!-- ===== Welcome hero ===== -->
