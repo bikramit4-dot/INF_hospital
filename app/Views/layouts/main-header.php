@@ -13,7 +13,7 @@ function header_nav_active(string $link, string $current): string
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php echo e(isset($page_title) ? $page_title . ' | ' . SITE_NAME : SITE_NAME); ?></title>
-<link rel="stylesheet" href="<?php echo e(site_url('css/style.css?v=18')); ?>">
+<link rel="stylesheet" href="<?php echo e(site_url('css/style.css?v=19')); ?>">
 <link rel="stylesheet" href="<?php echo e(site_url('css/aos.css')); ?>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
