@@ -34,6 +34,7 @@ $__pages = [
         'url' => '../pages/index.php',
         'groups' => [
             'Hero Section' => [
+                ['section' => 'hero_eyebrow', 'label' => 'Hero Eyebrow', 'type' => 'text', 'default' => 'Caring for Nepal since 1999'],
                 ['section' => 'hero_title', 'label' => 'Hero Title', 'type' => 'text', 'default' => 'Welcome to International Nepal Fellowship (Nepal)'],
                 ['section' => 'hero_subtitle', 'label' => 'Hero Subtitle', 'type' => 'textarea', 'rows' => 3, 'default' => 'Home Hospital is committed to providing world-class healthcare with modern technology, expert specialists and patient-centered service, 24 hours a day.'],
             ],

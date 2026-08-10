@@ -5,6 +5,7 @@
   </video>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="container hero-inner">
+    <span class="hero-eyebrow" data-aos="fade-up" data-aos-duration="900">✦ <?php echo e(content('home', 'hero_eyebrow')); ?></span>
     <h1 data-aos="fade-up" data-aos-duration="1000">
       <span class="hero-title"><?php echo e(content('home', 'hero_title')); ?></span>
     </h1>
@@ -12,6 +13,11 @@
     <div class="hero-buttons">
       <a href="<?php echo e(site_url('pages/book-appointment.php')); ?>" class="btn btn-primary" data-aos="zoom-in" data-aos-duration="1200">Book Appointment</a>
       <a href="<?php echo e(site_url('pages/services.php#emergency')); ?>" class="btn btn-outline" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="100">Emergency Services</a>
+    </div>
+    <div class="hero-trust" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250">
+      <span class="trust-item"><span class="trust-dot">✔</span> 25+ Years of Care</span>
+      <span class="trust-item"><span class="trust-dot">✔</span> 150+ Expert Doctors</span>
+      <span class="trust-item"><span class="trust-dot">✔</span> 24/7 Emergency</span>
     </div>
   </div>
 </section>
