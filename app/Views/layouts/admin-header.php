@@ -1,8 +1,8 @@
 <?php
 // ----------------------------------------------------------
 // Shared admin layout — header
-// Renders the sidebar navigation + sticky topbar for every
-// page rendered via View::renderAdmin().
+// Wellness-style: sticky top bar (brand + actions) and a
+// horizontal section nav. Rendered via View::renderAdmin().
 // ----------------------------------------------------------
 use App\Models\Appointment;
 use App\Models\CareerApplication;
@@ -13,7 +13,7 @@ use App\Models\OnlineConsultation;
 // key (e.g. 'departments'); otherwise fall back to the current script.
 $active_page = $active ?? basename(parse_url($_SERVER['REQUEST_URI'] ?? '/admin/index.php', PHP_URL_PATH) ?? '', '.php');
 
-// Sidebar notification badges (pending / unread counts).
+// Nav badge counts (pending / unread).
 $nav_badge = [
     'appointments' => (int) Appointment::count('status = :s', [':s' => 'pending']),
     'contacts' => (int) Contact::unreadCount(),
@@ -22,32 +22,28 @@ $nav_badge = [
 ];
 
 $admin_nav = [
-    ['key' => 'index', 'label' => 'Overview', 'icon' => 'grid', 'href' => 'index.php', 'section' => 'main'],
-    ['key' => 'departments', 'label' => 'Departments', 'icon' => 'building', 'href' => 'departments.php', 'section' => 'main'],
-    ['key' => 'doctors', 'label' => 'Doctors', 'icon' => 'stethoscope', 'href' => 'doctors.php', 'section' => 'main'],
-    ['key' => 'services', 'label' => 'Services', 'icon' => 'activity', 'href' => 'services.php', 'section' => 'main'],
-    ['key' => 'packages', 'label' => 'Health Packages', 'icon' => 'heart', 'href' => 'packages.php', 'section' => 'main'],
-    ['key' => 'team-members', 'label' => 'Team Members', 'icon' => 'users', 'href' => 'team-members.php', 'section' => 'main'],
-    ['key' => 'lab-reports', 'label' => 'Lab Reports', 'icon' => 'file', 'href' => 'lab-reports.php', 'section' => 'main'],
-    ['key' => 'news', 'label' => 'News & Events', 'icon' => 'newspaper', 'href' => 'news.php', 'section' => 'main'],
-    ['key' => 'pages', 'label' => 'Pages', 'icon' => 'layout', 'href' => 'pages.php', 'section' => 'main'],
-    ['key' => 'appointments', 'label' => 'Appointments', 'icon' => 'calendar', 'href' => 'appointments.php', 'section' => 'inbox', 'badge' => $nav_badge['appointments']],
-    ['key' => 'contacts', 'label' => 'Messages', 'icon' => 'mail', 'href' => 'contacts.php', 'section' => 'inbox', 'badge' => $nav_badge['contacts']],
-    ['key' => 'consultations', 'label' => 'Consultations', 'icon' => 'video', 'href' => 'consultations.php', 'section' => 'inbox', 'badge' => $nav_badge['consultations']],
-    ['key' => 'applications', 'label' => 'Applications', 'icon' => 'briefcase', 'href' => 'applications.php', 'section' => 'inbox', 'badge' => $nav_badge['applications']],
-    ['key' => 'change-password', 'label' => 'Change Password', 'icon' => 'key', 'href' => 'change-password.php', 'section' => 'account'],
-];
-
-$nav_section_labels = [
-    'main' => 'Main Menu',
-    'inbox' => 'Inbox & Requests',
-    'account' => 'Account',
+    ['key' => 'index', 'label' => 'Dashboard', 'href' => 'index.php'],
+    ['key' => 'pages', 'label' => 'Pages', 'href' => 'pages.php'],
+    ['key' => 'departments', 'label' => 'Departments', 'href' => 'departments.php'],
+    ['key' => 'doctors', 'label' => 'Doctors', 'href' => 'doctors.php'],
+    ['key' => 'services', 'label' => 'Services', 'href' => 'services.php'],
+    ['key' => 'packages', 'label' => 'Health Packages', 'href' => 'packages.php'],
+    ['key' => 'team-members', 'label' => 'Team Members', 'href' => 'team-members.php'],
+    ['key' => 'lab-reports', 'label' => 'Lab Reports', 'href' => 'lab-reports.php'],
+    ['key' => 'news', 'label' => 'News & Events', 'href' => 'news.php'],
+    ['key' => 'appointments', 'label' => 'Appointments', 'href' => 'appointments.php', 'badge' => $nav_badge['appointments']],
+    ['key' => 'contacts', 'label' => 'Messages', 'href' => 'contacts.php', 'badge' => $nav_badge['contacts']],
+    ['key' => 'consultations', 'label' => 'Consultations', 'href' => 'consultations.php', 'badge' => $nav_badge['consultations']],
+    ['key' => 'applications', 'label' => 'Applications', 'href' => 'applications.php', 'badge' => $nav_badge['applications']],
+    ['key' => 'change-password', 'label' => 'Password', 'href' => 'change-password.php'],
 ];
 
 function admin_icon(string $name): string
 {
     static $icons = [
+        'cross' => '<path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7V3Z"/>',
         'grid' => '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>',
+        'layout' => '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/>',
         'building' => '<rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M12 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/>',
         'stethoscope' => '<path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/>',
         'heart' => '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>',
@@ -59,9 +55,7 @@ function admin_icon(string $name): string
         'key' => '<path d="m21 2-9.6 9.6"/><circle cx="7.5" cy="15.5" r="5.5"/><path d="m15.5 7.5 3 3L22 7l-3-3"/>',
         'logout' => '<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>',
         'external' => '<path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
-        'cross' => '<path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7V3Z"/>',
         'shield' => '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/>',
-        'menu' => '<line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>',
         'plus' => '<path d="M5 12h14"/><path d="M12 5v14"/>',
         'inbox' => '<polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/>',
         'message' => '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
@@ -69,9 +63,12 @@ function admin_icon(string $name): string
         'edit' => '<path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/>',
         'search' => '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
         'arrow' => '<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>',
+        'chevron-right' => '<path d="m9 18 6-6-6-6"/>',
+        'check' => '<path d="M20 6 9 17l-5-5"/>',
+        'zap' => '<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>',
+        'clock' => '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
         'users' => '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
         'activity' => '<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
-        'layout' => '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/>',
         'trash' => '<path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/>',
     ];
     $body = $icons[$name] ?? $icons['grid'];
@@ -83,79 +80,49 @@ function admin_icon(string $name): string
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <title><?php echo e($page_title ?? 'Admin'); ?> | <?php echo e(SITE_NAME); ?> Admin</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/admin.css?v=3">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css?v=4">
 </head>
 <body class="admin-body">
-<div class="admin-shell">
 
-  <!-- ===== Sidebar ===== -->
-  <aside class="admin-sidebar" id="adminSidebar">
-    <div class="sidebar-brand">
-      <span class="brand-mark"><?php echo admin_icon('cross'); ?></span>
-      <span class="brand-text">
-        <strong><?php echo e(SITE_NAME); ?></strong>
-        <small>Admin Panel</small>
-      </span>
+  <!-- ===== Top bar ===== -->
+  <header class="admin-topbar">
+    <div class="admin-topbar-inner">
+      <a class="brand" href="index.php">
+        <span class="brand-mark"><?php echo admin_icon('cross'); ?></span>
+        <span class="brand-text"><strong><?php echo e(SITE_NAME); ?> <em>Admin</em></strong></span>
+      </a>
+      <div class="admin-topbar-actions">
+        <a class="admin-link" href="index.php">Dashboard</a>
+        <a class="admin-link" href="../index.php" target="_blank" rel="noopener">View Site</a>
+        <span class="admin-user">Signed in as <strong><?php echo e($_SESSION['admin_user'] ?? 'admin'); ?></strong></span>
+        <a href="logout.php" class="btn btn-light btn-sm">Log Out</a>
+      </div>
     </div>
+  </header>
 
-    <nav class="sidebar-nav" aria-label="Admin navigation">
-      <?php
-      $current_section = '';
-      foreach ($admin_nav as $item) {
-          if ($item['section'] !== $current_section) {
-              $current_section = $item['section'];
-              echo '<div class="nav-section">' . e($nav_section_labels[$current_section] ?? ucfirst($current_section)) . '</div>';
-          }
+  <!-- ===== Section nav ===== -->
+  <nav class="admin-nav" aria-label="Admin sections">
+    <div class="admin-nav-inner">
+      <?php foreach ($admin_nav as $item):
           $is_active = ($active_page === $item['key']);
           $badge = !empty($item['badge']) ? (int) $item['badge'] : 0;
       ?>
-      <a class="nav-item<?php echo $is_active ? ' active' : ''; ?>" href="<?php echo e($item['href']); ?>">
-        <?php echo admin_icon($item['icon']); ?>
+      <a class="<?php echo $is_active ? 'active' : ''; ?>" href="<?php echo e($item['href']); ?>">
         <span><?php echo e($item['label']); ?></span>
         <?php if (isset($item['badge'])): ?>
           <span class="nav-badge<?php echo $badge === 0 ? ' nav-badge-zero' : ''; ?>"><?php echo $badge; ?></span>
         <?php endif; ?>
       </a>
-      <?php } ?>
-      <div class="nav-section">Account</div>
-      <a class="nav-item nav-danger" href="logout.php">
-        <?php echo admin_icon('logout'); ?>
-        <span>Sign Out</span>
-      </a>
-    </nav>
-
-    <div class="sidebar-footer">
-      <a class="sidebar-site-link" href="../index.php" target="_blank" rel="noopener">
-        <?php echo admin_icon('external'); ?>
-        <span>View Website</span>
-      </a>
-      <span class="sidebar-user">Signed in as<br><strong><?php echo e($_SESSION['admin_user'] ?? 'admin'); ?></strong></span>
+      <?php endforeach; ?>
     </div>
-  </aside>
-  <div class="sidebar-scrim" id="sidebarScrim"></div>
+  </nav>
 
-  <!-- ===== Main column ===== -->
-  <div class="admin-main">
-    <header class="admin-topbar">
-      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation menu">
-        <?php echo admin_icon('menu'); ?>
-      </button>
-      <h1 class="page-title"><?php echo e($page_title ?? 'Admin'); ?></h1>
-      <div class="topbar-actions">
-        <a class="topbar-site" href="../index.php" target="_blank" rel="noopener">
-          <?php echo admin_icon('external'); ?>
-          <span>View Site</span>
-        </a>
-        <span class="topbar-user">
-          <span class="avatar"><?php echo e(strtoupper(mb_substr($_SESSION['admin_user'] ?? 'A', 0, 1))); ?></span>
-          <?php echo e($_SESSION['admin_user'] ?? 'admin'); ?>
-        </span>
-        <a href="logout.php" class="btn btn-sm btn-danger">Sign Out</a>
-      </div>
-    </header>
-
-    <main class="admin-content">
+  <!-- ===== Main ===== -->
+  <main class="admin-main">
+    <div class="admin-content">

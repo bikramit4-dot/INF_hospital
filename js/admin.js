@@ -5,27 +5,6 @@
 (function () {
   'use strict';
 
-  // ---- Mobile sidebar toggle ----
-  var toggle = document.getElementById('sidebarToggle');
-  var sidebar = document.getElementById('adminSidebar');
-  var scrim = document.getElementById('sidebarScrim');
-
-  function closeSidebar() {
-    if (sidebar) sidebar.classList.remove('open');
-    if (scrim) scrim.classList.remove('show');
-  }
-
-  if (toggle && sidebar) {
-    toggle.addEventListener('click', function () {
-      var open = sidebar.classList.toggle('open');
-      if (scrim) scrim.classList.toggle('show', open);
-    });
-  }
-  if (scrim) scrim.addEventListener('click', closeSidebar);
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeSidebar();
-  });
-
   // ---- Confirmation dialogs for action forms ----
   document.querySelectorAll('form.js-confirm').forEach(function (form) {
     form.addEventListener('submit', function (e) {

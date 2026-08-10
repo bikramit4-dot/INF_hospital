@@ -1,120 +1,153 @@
 <?php
-$stats_meta = [
-    ['label' => 'Departments', 'value' => $stats['departments'], 'href' => 'departments.php', 'icon' => 'building', 'tint' => 'tint-dark'],
-    ['label' => 'Doctors', 'value' => $stats['doctors'], 'href' => 'doctors.php', 'icon' => 'stethoscope', 'tint' => 'tint-red'],
-    ['label' => 'Services', 'value' => $stats['services'], 'href' => 'services.php', 'icon' => 'activity', 'tint' => 'tint-green'],
-    ['label' => 'Health Packages', 'value' => $stats['packages'], 'href' => 'packages.php', 'icon' => 'heart', 'tint' => 'tint-blue'],
-    ['label' => 'Team Members', 'value' => $stats['team'], 'href' => 'team-members.php', 'icon' => 'users', 'tint' => 'tint-dark'],
-    ['label' => 'Lab Reports', 'value' => $stats['lab_reports'], 'href' => 'lab-reports.php', 'icon' => 'file', 'tint' => 'tint-purple'],
-    ['label' => 'News Items', 'value' => $stats['news'], 'href' => 'news.php', 'icon' => 'newspaper', 'tint' => 'tint-purple'],
-    ['label' => 'Pending Appointments', 'value' => $stats['appointments'], 'href' => 'appointments.php', 'icon' => 'calendar', 'tint' => 'tint-amber', 'note' => 'awaiting review'],
-    ['label' => 'Unread Messages', 'value' => $stats['contacts'], 'href' => 'contacts.php', 'icon' => 'mail', 'tint' => 'tint-green', 'note' => 'in your inbox'],
-    ['label' => 'Consultations', 'value' => $stats['consultations'], 'href' => 'consultations.php', 'icon' => 'video', 'tint' => 'tint-blue', 'note' => 'pending'],
-    ['label' => 'Job Applications', 'value' => $stats['applications'], 'href' => 'applications.php', 'icon' => 'briefcase', 'tint' => 'tint-purple', 'note' => 'pending'],
+$admin_name = e($_SESSION['admin_user'] ?? 'Admin');
+$today_label = date('l, F j, Y');
+$pending = (int) $stats['appointments'];
+$unread = (int) $stats['contacts'];
+
+$overview_stats = [
+    ['label' => 'Departments', 'value' => $stats['departments'], 'href' => 'departments.php', 'icon' => 'building', 'tint' => 'stat-total'],
+    ['label' => 'Doctors', 'value' => $stats['doctors'], 'href' => 'doctors.php', 'icon' => 'stethoscope', 'tint' => 'stat-total'],
+    ['label' => 'Services', 'value' => $stats['services'], 'href' => 'services.php', 'icon' => 'activity', 'tint' => 'stat-confirmed'],
+    ['label' => 'Health Packages', 'value' => $stats['packages'], 'href' => 'packages.php', 'icon' => 'heart', 'tint' => 'stat-new'],
+    ['label' => 'Team Members', 'value' => $stats['team'], 'href' => 'team-members.php', 'icon' => 'users', 'tint' => 'stat-completed'],
+    ['label' => 'News Items', 'value' => $stats['news'], 'href' => 'news.php', 'icon' => 'newspaper', 'tint' => 'stat-total'],
+    ['label' => 'Lab Reports', 'value' => $stats['lab_reports'], 'href' => 'lab-reports.php', 'icon' => 'file', 'tint' => 'stat-confirmed'],
+];
+
+$quick_links = [
+    ['label' => 'Add Department', 'href' => 'departments.php', 'icon' => 'building'],
+    ['label' => 'Add Doctor', 'href' => 'doctors.php', 'icon' => 'stethoscope'],
+    ['label' => 'Add Service', 'href' => 'services.php', 'icon' => 'activity'],
+    ['label' => 'Add Package', 'href' => 'packages.php', 'icon' => 'heart'],
+    ['label' => 'Add News', 'href' => 'news.php', 'icon' => 'newspaper'],
+    ['label' => 'Edit Page Content', 'href' => 'pages.php', 'icon' => 'layout'],
+    ['label' => 'Review Appointments', 'href' => 'appointments.php', 'icon' => 'calendar'],
+    ['label' => 'Read Messages', 'href' => 'contacts.php', 'icon' => 'mail'],
+];
+
+$manage_cards = [
+    ['label' => 'Departments', 'href' => 'departments.php', 'icon' => 'building', 'count' => $stats['departments']],
+    ['label' => 'Doctors', 'href' => 'doctors.php', 'icon' => 'stethoscope', 'count' => $stats['doctors']],
+    ['label' => 'Services', 'href' => 'services.php', 'icon' => 'activity', 'count' => $stats['services']],
+    ['label' => 'Health Packages', 'href' => 'packages.php', 'icon' => 'heart', 'count' => $stats['packages']],
+    ['label' => 'Team Members', 'href' => 'team-members.php', 'icon' => 'users', 'count' => $stats['team']],
+    ['label' => 'Lab Reports', 'href' => 'lab-reports.php', 'icon' => 'file', 'count' => $stats['lab_reports']],
+    ['label' => 'News & Events', 'href' => 'news.php', 'icon' => 'newspaper', 'count' => $stats['news']],
+    ['label' => 'Website Pages', 'href' => 'pages.php', 'icon' => 'layout', 'count' => 20],
 ];
 ?>
-<div class="page-head">
-  <div>
-    <h1>Admin Dashboard</h1>
-    <p>Manage the hospital website content from one secure place.</p>
+<!-- ===== Welcome hero ===== -->
+<div class="dash-hero">
+  <div class="dash-hero-deco" aria-hidden="true"><?php echo admin_icon('cross'); ?></div>
+  <div class="dash-hero-content">
+    <span class="dash-hero-kicker">Admin Panel</span>
+    <h1>Welcome back, <?php echo $admin_name; ?></h1>
+    <p class="dash-hero-meta">
+      <?php echo admin_icon('calendar'); ?>
+      <?php echo e($today_label); ?>
+      &nbsp;&middot;&nbsp;
+      <span class="dash-hero-new"><?php echo $pending; ?> pending appointment<?php echo $pending === 1 ? '' : 's'; ?></span>
+      and <span class="dash-hero-new"><?php echo $unread; ?> unread message<?php echo $unread === 1 ? '' : 's'; ?></span>
+      waiting for you
+    </p>
   </div>
-  <a href="../index.php" class="btn btn-sm btn-outline-dark" target="_blank" rel="noopener">View Website</a>
+  <div class="dash-hero-actions">
+    <a class="btn btn-light btn-sm" href="appointments.php">All Appointments</a>
+    <a class="btn btn-primary btn-sm" href="pages.php">Edit Pages</a>
+    <a class="btn dash-hero-ghost btn-sm" href="../index.php" target="_blank" rel="noopener">View Site</a>
+  </div>
 </div>
 
-<div class="stat-grid">
-  <?php foreach ($stats_meta as $stat): ?>
-  <div class="stat-card">
-    <a class="stat-link" href="<?php echo e($stat['href']); ?>" aria-label="Open <?php echo e($stat['label']); ?>"></a>
-    <div class="stat-top">
-      <span class="stat-icon <?php echo e($stat['tint']); ?>"><?php echo admin_icon($stat['icon']); ?></span>
-      <span class="stat-value"><?php echo (int) $stat['value']; ?></span>
+<!-- ===== Overview stats ===== -->
+<div class="admin-stats">
+  <?php foreach ($overview_stats as $stat): ?>
+  <div class="admin-stat">
+    <span class="stat-icon <?php echo e($stat['tint']); ?>"><?php echo admin_icon($stat['icon']); ?></span>
+    <div class="stat-body">
+      <strong><?php echo (int) $stat['value']; ?></strong>
+      <span><?php echo e($stat['label']); ?></span>
     </div>
-    <div>
-      <div class="stat-label"><?php echo e($stat['label']); ?></div>
-      <?php if (!empty($stat['note'])): ?><div class="stat-note"><?php echo e($stat['note']); ?></div><?php endif; ?>
-    </div>
+    <a class="stat-trend" href="<?php echo e($stat['href']); ?>">Manage &rarr;</a>
   </div>
   <?php endforeach; ?>
 </div>
 
-<div class="dash-cols">
-  <div class="card">
-    <div class="card-head">
-      <h3>Recent Appointments</h3>
-      <a href="appointments.php" class="btn btn-sm btn-ghost">View all</a>
+<div class="dash-grid">
+  <!-- ===== Recent appointments ===== -->
+  <section class="dash-panel">
+    <div class="dash-panel-head">
+      <h2>Recent Appointments</h2>
+      <a href="appointments.php">View all &rarr;</a>
     </div>
     <?php if (empty($recent_appointments)): ?>
-      <div class="empty-state">
-        <span class="empty-icon"><?php echo admin_icon('calendar'); ?></span>
-        <p>No appointment requests yet.</p>
-        <small>Requests will appear here as patients book.</small>
-      </div>
+      <p class="dash-empty">No appointment requests yet. New bookings from the website will appear here.</p>
     <?php else: ?>
-      <div class="recent-list">
-        <?php foreach ($recent_appointments as $appt): ?>
-        <div class="recent-item">
-          <span class="ri-icon"><?php echo admin_icon('calendar'); ?></span>
-          <div class="ri-body">
-            <div class="ri-title"><?php echo e($appt['patient_name']); ?> <span class="cell-muted">· <?php echo e($appt['booking_ref']); ?></span></div>
-            <div class="ri-sub"><?php echo e($appt['doctor_name'] ?? '—'); ?> · <?php echo e($appt['appointment_date']); ?> at <?php echo e($appt['appointment_time']); ?></div>
+      <ul class="dash-recent">
+        <?php foreach ($recent_appointments as $i => $appt): ?>
+        <li>
+          <span class="avatar a<?php echo 1 + ($i % 6); ?>"><?php echo e(strtoupper(mb_substr($appt['patient_name'], 0, 2))); ?></span>
+          <div class="dash-recent-info">
+            <strong><?php echo e($appt['patient_name']); ?></strong>
+            <span><?php echo e($appt['doctor_name'] ?? '—'); ?> &middot; <?php echo e($appt['appointment_date']); ?> at <?php echo e($appt['appointment_time']); ?></span>
           </div>
-          <span class="badge badge-<?php echo e($appt['status']); ?>"><?php echo e($appt['status']); ?></span>
-        </div>
+          <span class="badge badge-<?php echo e($appt['status']); ?>"><i class="badge-dot"></i><?php echo e($appt['status']); ?></span>
+        </li>
         <?php endforeach; ?>
-      </div>
+      </ul>
     <?php endif; ?>
-  </div>
+  </section>
 
-  <div class="card">
-    <div class="card-head">
-      <h3>Recent Messages</h3>
-      <a href="contacts.php" class="btn btn-sm btn-ghost">View all</a>
+  <!-- ===== Recent messages ===== -->
+  <section class="dash-panel">
+    <div class="dash-panel-head">
+      <h2>Recent Messages</h2>
+      <a href="contacts.php">View all &rarr;</a>
     </div>
     <?php if (empty($recent_messages)): ?>
-      <div class="empty-state">
-        <span class="empty-icon"><?php echo admin_icon('mail'); ?></span>
-        <p>No contact messages yet.</p>
-        <small>Messages from the contact form will appear here.</small>
-      </div>
+      <p class="dash-empty">No contact messages yet. Messages from the contact form will appear here.</p>
     <?php else: ?>
-      <div class="recent-list">
-        <?php foreach ($recent_messages as $msg): ?>
-        <div class="recent-item">
-          <span class="ri-icon"><?php echo admin_icon('message'); ?></span>
-          <div class="ri-body">
-            <div class="ri-title"><?php echo e($msg['name']); ?> <span class="cell-muted">· <?php echo e($msg['subject'] ?? 'No subject'); ?></span></div>
-            <div class="ri-sub"><?php echo e(mb_strimwidth($msg['message'], 0, 64, '…')); ?></div>
+      <ul class="dash-recent">
+        <?php foreach ($recent_messages as $i => $msg): ?>
+        <li>
+          <span class="avatar a<?php echo 1 + (($i + 3) % 6); ?>"><?php echo e(strtoupper(mb_substr($msg['name'], 0, 2))); ?></span>
+          <div class="dash-recent-info">
+            <strong><?php echo e($msg['name']); ?></strong>
+            <span><?php echo e(mb_strimwidth($msg['message'], 0, 60, '…')); ?></span>
           </div>
-          <span class="badge <?php echo $msg['is_read'] ? 'badge-read' : 'badge-unread'; ?>"><?php echo $msg['is_read'] ? 'read' : 'unread'; ?></span>
-        </div>
+          <span class="badge <?php echo $msg['is_read'] ? 'badge-read' : 'badge-unread'; ?>"><i class="badge-dot"></i><?php echo $msg['is_read'] ? 'read' : 'unread'; ?></span>
+        </li>
         <?php endforeach; ?>
-      </div>
+      </ul>
     <?php endif; ?>
-  </div>
+  </section>
 </div>
 
-<div class="dash-cols">
-  <div class="card">
-    <div class="card-head"><h3>Quick Actions</h3></div>
-    <div class="quick-links">
-      <a class="quick-link" href="departments.php"><span class="ql-icon"><?php echo admin_icon('building'); ?></span>Add Department</a>
-      <a class="quick-link" href="doctors.php"><span class="ql-icon"><?php echo admin_icon('stethoscope'); ?></span>Add Doctor</a>
-      <a class="quick-link" href="services.php"><span class="ql-icon"><?php echo admin_icon('activity'); ?></span>Add Service</a>
-      <a class="quick-link" href="packages.php"><span class="ql-icon"><?php echo admin_icon('heart'); ?></span>Add Package</a>
-      <a class="quick-link" href="team-members.php"><span class="ql-icon"><?php echo admin_icon('users'); ?></span>Add Team Member</a>
-      <a class="quick-link" href="lab-reports.php"><span class="ql-icon"><?php echo admin_icon('file'); ?></span>Add Lab Report</a>
-      <a class="quick-link" href="news.php"><span class="ql-icon"><?php echo admin_icon('newspaper'); ?></span>Add News</a>
-      <a class="quick-link" href="pages.php"><span class="ql-icon"><?php echo admin_icon('layout'); ?></span>Edit Page Content</a>
-      <a class="quick-link" href="appointments.php"><span class="ql-icon"><?php echo admin_icon('calendar'); ?></span>Review Appointments</a>
-      <a class="quick-link" href="contacts.php"><span class="ql-icon"><?php echo admin_icon('mail'); ?></span>Read Messages</a>
-    </div>
-  </div>
-
-  <div class="card security-card">
-    <span class="sec-icon"><?php echo admin_icon('shield'); ?></span>
-    <div>
-      <h3>Security</h3>
-      <p>This admin area uses password hashing, session regeneration, CSRF protection, brute-force login throttling, and hardened security headers. Keep your admin password strong and change it regularly.</p>
-    </div>
-  </div>
+<!-- ===== Quick actions ===== -->
+<div class="dash-quick">
+  <?php foreach ($quick_links as $link): ?>
+  <a class="quick-link" href="<?php echo e($link['href']); ?>">
+    <span class="quick-link-icon"><?php echo admin_icon($link['icon']); ?></span>
+    <?php echo e($link['label']); ?>
+  </a>
+  <?php endforeach; ?>
 </div>
+
+<!-- ===== Manage content ===== -->
+<section class="dash-panel">
+  <div class="dash-panel-head">
+    <h2>Manage Content</h2>
+    <a href="pages.php">Open page editor &rarr;</a>
+  </div>
+  <div class="content-grid">
+    <?php foreach ($manage_cards as $card): ?>
+    <a class="content-card" href="<?php echo e($card['href']); ?>">
+      <span class="content-card-icon"><?php echo admin_icon($card['icon']); ?></span>
+      <div>
+        <h3><?php echo e($card['label']); ?></h3>
+        <p><?php echo (int) $card['count']; ?> item<?php echo (int) $card['count'] === 1 ? '' : 's'; ?></p>
+      </div>
+      <span class="content-card-arrow"><?php echo admin_icon('chevron-right'); ?></span>
+    </a>
+    <?php endforeach; ?>
+  </div>
+</section>
