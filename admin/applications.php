@@ -67,6 +67,7 @@ View::renderAdmin('admin/records', [
         ['value' => 'reviewed', 'label' => 'Mark reviewed', 'hide_when' => ['reviewed'], 'class' => 'btn-ghost', 'confirm' => 'Mark this application as reviewed?'],
     ],
     'allow_delete' => true,
+    'csrf_token' => $csrf_token,
     'items' => $items,
     'pagination' => $pagination,
 ]);

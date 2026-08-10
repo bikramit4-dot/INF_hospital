@@ -66,6 +66,7 @@ View::renderAdmin('admin/records', [
         ['value' => 'read', 'label' => 'Mark read', 'hide_when' => [1], 'class' => 'btn-ghost', 'confirm' => 'Mark this message as read?'],
     ],
     'allow_delete' => true,
+    'csrf_token' => $csrf_token,
     'items' => $items,
     'pagination' => $pagination,
 ]);

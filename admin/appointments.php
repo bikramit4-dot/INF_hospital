@@ -70,6 +70,7 @@ View::renderAdmin('admin/records', [
         ['value' => 'cancelled', 'label' => 'Cancel', 'hide_when' => ['cancelled'], 'class' => 'btn-danger', 'confirm' => 'Cancel this appointment?'],
     ],
     'allow_delete' => true,
+    'csrf_token' => $csrf_token,
     'items' => $items,
     'pagination' => $pagination,
 ]);
