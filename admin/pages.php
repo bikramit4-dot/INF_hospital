@@ -43,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 throw new Exception('Unknown field.');
             }
             PageContent::upsert($target, $reset_section, '');
+            PageContent::pruneEmpty($target);
             $message = '<div class="alert alert-success alert-dismissible">Field reset to its default value.</div>';
         } else {
             // Save every field of the current page, skipping unchanged values
